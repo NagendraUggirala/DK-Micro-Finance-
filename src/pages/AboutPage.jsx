@@ -6,9 +6,11 @@ const About = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  const teamRef = useRef(null);
   const isInView1 = useInView(ref1, { once: true, threshold: 0.3 });
   const isInView2 = useInView(ref2, { once: true, threshold: 0.3 });
   const isInView3 = useInView(ref3, { once: true, threshold: 0.3 });
+  const isTeamInView = useInView(teamRef, { once: true, threshold: 0.3 });
 
   const milestones = [
     { year: "2010", title: "Foundation", description: "DK Micro Finance established with vision of ethical lending" },
@@ -67,6 +69,34 @@ const About = () => {
     }
   ];
 
+  // Team members data
+ const teamMembers = [
+    {
+      name: "L. Gowthami",
+      position: "HR Business Partner",
+      department: "Human Resources",
+      image: "/images/HR.png",
+      description: "Leading HR operations and talent acquisition with focus on building a strong organizational culture.",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      name: "D.v. mahalakshmi",
+      position: "Team Leader",
+      department: "Operations",
+      image: "/images/image.png",
+      description: "Experienced team leader driving operational excellence and customer service standards.",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      name: "B. Vani",
+      position: "Second Team Leader",
+      department: "Operations",
+      image: "/images/TL.png",
+      description: "Dedicated team leader ensuring smooth loan processing and client satisfaction.",
+      color: "from-emerald-500 to-teal-500"
+    }
+];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -99,6 +129,19 @@ const About = () => {
         ease: "easeOut"
       }
     }
+  };
+
+  const teamCardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    })
   };
 
   return (
@@ -179,7 +222,7 @@ const About = () => {
                   {/* Responsive Image card */}
                   <div className="w-full h-[350px] sm:h-[400px] md:h-[500px] lg:h-[580px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-100 bg-white transform transition-all duration-500 group-hover:shadow-3xl group-hover:scale-[1.02] group-hover:ring-2 group-hover:ring-blue-200">
                     <img
-                      src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80"
+                      src="./images/CEO.png"
                       alt="Leadership Team"
                       className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
@@ -275,6 +318,102 @@ const About = () => {
               </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION: Our Team */}
+      <section ref={teamRef} className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isTeamInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-4 md:mb-6">
+              Our <span className="text-orange-500">Dedicated Team</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
+              Meet the professionals who make DK Micro Finance a trusted name in financial services
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                initial="hidden"
+                animate={isTeamInView ? "visible" : "hidden"}
+                variants={teamCardVariants}
+                whileHover={{ y: -8, scale: 1.03 }}
+                className="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              >
+                {/* Image Container */}
+                <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${member.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300 z-10`}></div>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  
+                  {/* Name Badge on Image */}
+                 <div className="absolute bottom-2 left-2 right-2 z-20">
+  <div className="bg-white/95 backdrop-blur-sm rounded-md p-2 transform transition-transform duration-300 group-hover:translate-y-[-2px]">
+    <h3 className="text-sm font-semibold text-gray-800">
+      {member.name}
+    </h3>
+    <p className="text-xs text-blue-600 font-medium">
+      {member.position}
+    </p>
+  </div>
+</div>
+                </div>
+
+                {/* Content */}
+                <div className="p-5">
+                  <div className="flex items-center mb-3">
+                    <span className={`inline-block w-2 h-2 rounded-full bg-gradient-to-r ${member.color} mr-2`}></span>
+                    <p className="text-sm text-gray-500 font-medium">{member.department}</p>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {member.description}
+                  </p>
+                  
+                  {/* Social/Hover Effect Line */}
+                  <div className={`mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r ${member.color} transition-all duration-500 rounded-full`}></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Team Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isTeamInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 text-center"
+          >
+            <div className="inline-flex flex-wrap justify-center gap-4 md:gap-8 bg-white rounded-full px-6 md:px-10 py-4 shadow-lg">
+              <div className="text-center">
+                <div className="text-xl md:text-2xl font-bold text-blue-700">50+</div>
+                <div className="text-xs text-gray-500">Team Members</div>
+              </div>
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              <div className="text-center">
+                <div className="text-xl md:text-2xl font-bold text-blue-700">10+</div>
+                <div className="text-xs text-gray-500">Years Combined</div>
+              </div>
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              <div className="text-center">
+                <div className="text-xl md:text-2xl font-bold text-blue-700">24/7</div>
+                <div className="text-xs text-gray-500">Support</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

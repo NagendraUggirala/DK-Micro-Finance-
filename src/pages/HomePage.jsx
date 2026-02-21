@@ -1230,16 +1230,16 @@ const Home = () => {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {[
-                  {
-                    name: "Bajaj Finserv",
-                    short: "Bajaj",
-                    loan: "Personal",
-                    rate: "10.5%",
-                    bgColor: "bg-blue-50",
+                 {
+  name: "Kotak Bank",
+  short: "Kotak",
+  loan: "Personal",
+  rate: "10.75%",
+  bgColor: "bg-blue-50",
                     borderColor: "border-t-blue-600",
                     rateColor: "text-blue-700",
                     badgeColor: "bg-blue-100 text-blue-800"
-                  },
+},
                   {
                     name: "Fullerton",
                     short: "Fullerton",

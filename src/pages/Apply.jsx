@@ -140,22 +140,22 @@ const ApplyLoans = () => {
     <>
       {/* Banner Section - Top lo */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 py-8 md:py-12">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
               Apply for a Loan
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-6">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-4 md:mb-6">
               Get instant approval on your loan application. Choose from our wide range of loan products with competitive interest rates.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 md:px-4 py-1 md:py-2 text-xs sm:text-sm md:text-base">
                 <span className="font-semibold">✓ Instant Approval</span>
               </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 md:px-4 py-1 md:py-2 text-xs sm:text-sm md:text-base">
                 <span className="font-semibold">✓ Lowest Interest Rates</span>
               </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 md:px-4 py-1 md:py-2 text-xs sm:text-sm md:text-base">
                 <span className="font-semibold">✓ 100% Online Process</span>
               </div>
             </div>
@@ -164,19 +164,19 @@ const ApplyLoans = () => {
       </div>
 
       {/* Main Content */}
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white pt-8">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white pt-4 md:pt-8">
+        <div className="container mx-auto px-4 py-4 md:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Left Column - Loan Types */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
-                <h2 className="text-2xl font-bold text-blue-700 mb-6">Select Loan Type</h2>
+              <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 mb-6 md:mb-8">
+                <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-blue-700 mb-4 md:mb-6">Select Loan Type</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                   {loanTypes.map((loan) => (
                     <div
                       key={loan.id}
-                      className={`p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
+                      className={`p-3 md:p-4 rounded-lg md:rounded-xl border-2 cursor-pointer transition-all duration-300 ${
                         formData.loanType === loan.id
                           ? "border-orange-500 bg-orange-50"
                           : "border-gray-200 hover:border-blue-300"
@@ -186,13 +186,13 @@ const ApplyLoans = () => {
                         setActiveTab("personal");
                       }}
                     >
-                      <div className="flex items-center space-x-3 mb-2">
-                        <span className="text-2xl">{loan.icon}</span>
-                        <h3 className="font-semibold text-gray-800">{loan.name}</h3>
+                      <div className="flex items-center space-x-2 md:space-x-3 mb-1 md:mb-2">
+                        <span className="text-xl md:text-2xl">{loan.icon}</span>
+                        <h3 className="text-sm md:text-base font-semibold text-gray-800">{loan.name}</h3>
                       </div>
-                      <p className="text-sm text-gray-600">{loan.description}</p>
-                      <div className="mt-3">
-                        <span className="text-sm font-semibold text-blue-700">
+                      <p className="text-xs md:text-sm text-gray-600 line-clamp-2">{loan.description}</p>
+                      <div className="mt-2 md:mt-3">
+                        <span className="text-xs md:text-sm font-semibold text-blue-700">
                           Rate: {interestRates[loan.id]}
                         </span>
                       </div>
@@ -202,22 +202,40 @@ const ApplyLoans = () => {
               </div>
 
               {/* Application Form */}
-              <div className="bg-white rounded-2xl shadow-xl p-6">
-                <div className="flex space-x-4 mb-6 border-b">
-                  {["personal", "loan", "employment", "address"].map((tab) => (
+              <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6">
+                {/* Responsive Tabs - Mobile Dropdown */}
+                <div className="block sm:hidden mb-4">
+                  <select
+                    value={activeTab}
+                    onChange={(e) => setActiveTab(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                  >
+                    <option value="personal">👤 Personal Information</option>
+                    <option value="loan">💰 Loan Details</option>
+                    <option value="employment">💼 Employment Details</option>
+                    <option value="address">📍 Address Details</option>
+                  </select>
+                </div>
+
+                {/* Desktop Tabs */}
+                <div className="hidden sm:flex flex-wrap gap-2 md:gap-4 mb-6 border-b">
+                  {[
+                    { id: "personal", label: "Personal Info", icon: "👤" },
+                    { id: "loan", label: "Loan Details", icon: "💰" },
+                    { id: "employment", label: "Employment", icon: "💼" },
+                    { id: "address", label: "Address", icon: "📍" }
+                  ].map((tab) => (
                     <button
-                      key={tab}
-                      className={`pb-3 px-4 font-medium ${
-                        activeTab === tab
+                      key={tab.id}
+                      className={`pb-2 md:pb-3 px-3 md:px-4 font-medium text-sm md:text-base flex items-center space-x-1 md:space-x-2 whitespace-nowrap ${
+                        activeTab === tab.id
                           ? "text-orange-500 border-b-2 border-orange-500"
-                          : "text-gray-500"
+                          : "text-gray-500 hover:text-gray-700"
                       }`}
-                      onClick={() => setActiveTab(tab)}
+                      onClick={() => setActiveTab(tab.id)}
                     >
-                      {tab === "personal" && "Personal Info"}
-                      {tab === "loan" && "Loan Details"}
-                      {tab === "employment" && "Employment"}
-                      {tab === "address" && "Address"}
+                      <span>{tab.icon}</span>
+                      <span>{tab.label}</span>
                     </button>
                   ))}
                 </div>
@@ -225,73 +243,80 @@ const ApplyLoans = () => {
                 <form onSubmit={handleSubmit}>
                   {/* Personal Information Tab */}
                   {activeTab === "personal" && (
-                    <div className="space-y-6">
-                      <h3 className="text-xl font-semibold text-blue-700 mb-4">Personal Information</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4 md:space-y-6">
+                      <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">
+                        <span className="mr-2">👤</span> Personal Information
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div>
-                          <label className="block text-gray-700 mb-2">Full Name *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Full Name *</label>
                           <input
                             type="text"
                             name="fullName"
                             value={formData.fullName}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter your full name"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Email Address *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Email Address *</label>
                           <input
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter your email"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Phone Number *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Phone Number *</label>
                           <input
                             type="tel"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="+91 98765 43210"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Date of Birth *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Date of Birth *</label>
                           <input
                             type="date"
                             name="dateOfBirth"
                             value={formData.dateOfBirth}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">PAN Number *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">PAN Number *</label>
                           <input
                             type="text"
                             name="panNumber"
                             value={formData.panNumber}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent uppercase"
+                            placeholder="ABCDE1234F"
                             required
                             maxLength="10"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Aadhar Number *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Aadhar Number *</label>
                           <input
                             type="text"
                             name="aadharNumber"
                             value={formData.aadharNumber}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="1234 5678 9012"
                             required
                             maxLength="12"
                           />
@@ -302,48 +327,51 @@ const ApplyLoans = () => {
 
                   {/* Loan Details Tab */}
                   {activeTab === "loan" && (
-                    <div className="space-y-6">
-                      <h3 className="text-xl font-semibold text-blue-700 mb-4">Loan Details</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4 md:space-y-6">
+                      <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">
+                        <span className="mr-2">💰</span> Loan Details
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div>
-                          <label className="block text-gray-700 mb-2">Loan Amount (₹) *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Loan Amount (₹) *</label>
                           <input
                             type="number"
                             name="loanAmount"
                             value={formData.loanAmount}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter amount"
                             required
                             min="10000"
                             max="5000000"
                           />
-                          <p className="text-sm text-gray-500 mt-1">Range: ₹10,000 - ₹50,00,000</p>
+                          <p className="text-xs md:text-sm text-gray-500 mt-1">Range: ₹10,000 - ₹50,00,000</p>
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Loan Tenure (Months) *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Loan Tenure (Months) *</label>
                           <select
                             name="loanTenure"
                             value={formData.loanTenure}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
                           >
-                            <option value="12">12 Months</option>
-                            <option value="24">24 Months</option>
-                            <option value="36">36 Months</option>
-                            <option value="48">48 Months</option>
-                            <option value="60">60 Months</option>
-                            <option value="84">84 Months</option>
+                            <option value="12">12 Months (1 Year)</option>
+                            <option value="24">24 Months (2 Years)</option>
+                            <option value="36">36 Months (3 Years)</option>
+                            <option value="48">48 Months (4 Years)</option>
+                            <option value="60">60 Months (5 Years)</option>
+                            <option value="84">84 Months (7 Years)</option>
                           </select>
                         </div>
-                        <div className="md:col-span-2">
-                          <label className="block text-gray-700 mb-2">Purpose of Loan *</label>
+                        <div className="sm:col-span-2">
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Purpose of Loan *</label>
                           <textarea
                             name="purpose"
                             value={formData.purpose}
                             onChange={handleChange}
                             rows="3"
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
                             placeholder="Briefly describe the purpose of the loan..."
                           ></textarea>
@@ -354,57 +382,63 @@ const ApplyLoans = () => {
 
                   {/* Employment Tab */}
                   {activeTab === "employment" && (
-                    <div className="space-y-6">
-                      <h3 className="text-xl font-semibold text-blue-700 mb-4">Employment Details</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4 md:space-y-6">
+                      <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">
+                        <span className="mr-2">💼</span> Employment Details
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div>
-                          <label className="block text-gray-700 mb-2">Employment Type *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Employment Type *</label>
                           <select
                             name="employmentType"
                             value={formData.employmentType}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
                           >
-                            <option value="salaried">Salaried</option>
+                            <option value="salaried">Salaried Employee</option>
                             <option value="self-employed">Self Employed</option>
                             <option value="business">Business Owner</option>
-                            <option value="professional">Professional</option>
+                            <option value="professional">Professional (Doctor/Lawyer/CA)</option>
                           </select>
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Company/Business Name</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Company/Business Name</label>
                           <input
                             type="text"
                             name="companyName"
                             value={formData.companyName}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter company name"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Monthly Income (₹) *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Monthly Income (₹) *</label>
                           <input
                             type="number"
                             name="monthlyIncome"
                             value={formData.monthlyIncome}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter monthly income"
                             required
                             min="10000"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Work Experience (Years) *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Work Experience (Years) *</label>
                           <input
                             type="number"
                             name="workExperience"
                             value={formData.workExperience}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter years of experience"
                             required
                             min="0"
                             max="40"
+                            step="0.5"
                           />
                         </div>
                       </div>
@@ -413,51 +447,56 @@ const ApplyLoans = () => {
 
                   {/* Address Tab */}
                   {activeTab === "address" && (
-                    <div className="space-y-6">
-                      <h3 className="text-xl font-semibold text-blue-700 mb-4">Address Details</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="md:col-span-2">
-                          <label className="block text-gray-700 mb-2">Complete Address *</label>
+                    <div className="space-y-4 md:space-y-6">
+                      <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">
+                        <span className="mr-2">📍</span> Address Details
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                        <div className="sm:col-span-2">
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Complete Address *</label>
                           <textarea
                             name="address"
                             value={formData.address}
                             onChange={handleChange}
                             rows="3"
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             required
-                            placeholder="House no, Street, Area..."
+                            placeholder="House no, Street, Area/Locality..."
                           ></textarea>
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">City *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">City *</label>
                           <input
                             type="text"
                             name="city"
                             value={formData.city}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter city"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">State *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">State *</label>
                           <input
                             type="text"
                             name="state"
                             value={formData.state}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter state"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 mb-2">Pincode *</label>
+                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Pincode *</label>
                           <input
                             type="text"
                             name="pincode"
                             value={formData.pincode}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter pincode"
                             required
                             maxLength="6"
                           />
@@ -466,8 +505,8 @@ const ApplyLoans = () => {
                     </div>
                   )}
 
-                  {/* Navigation Buttons */}
-                  <div className="flex justify-between mt-8 pt-6 border-t">
+                  {/* Navigation Buttons - Responsive */}
+                  <div className="flex flex-col sm:flex-row justify-between mt-6 md:mt-8 pt-4 md:pt-6 border-t gap-3">
                     <button
                       type="button"
                       onClick={() => {
@@ -475,15 +514,15 @@ const ApplyLoans = () => {
                         const currentIndex = tabs.indexOf(activeTab);
                         if (currentIndex > 0) setActiveTab(tabs[currentIndex - 1]);
                       }}
-                      className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
+                      className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 border border-gray-300 rounded-lg text-sm md:text-base text-gray-700 hover:bg-gray-50 order-2 sm:order-1"
                     >
-                      Previous
+                      ← Previous
                     </button>
                     
                     {activeTab === "address" ? (
                       <button
                         type="submit"
-                        className="px-8 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 font-semibold"
+                        className="w-full sm:w-auto px-6 md:px-8 py-2 md:py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 font-semibold text-sm md:text-base order-1 sm:order-2"
                       >
                         Submit Application
                       </button>
@@ -495,9 +534,9 @@ const ApplyLoans = () => {
                           const currentIndex = tabs.indexOf(activeTab);
                           if (currentIndex < tabs.length - 1) setActiveTab(tabs[currentIndex + 1]);
                         }}
-                        className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold"
+                        className="w-full sm:w-auto px-6 md:px-8 py-2 md:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold text-sm md:text-base order-1 sm:order-2"
                       >
-                        Next
+                        Next →
                       </button>
                     )}
                   </div>
@@ -506,27 +545,27 @@ const ApplyLoans = () => {
             </div>
 
             {/* Right Column - Calculator & Info */}
-            <div className="space-y-8">
+            <div className="space-y-4 md:space-y-6 lg:space-y-8">
               {/* EMI Calculator */}
-              <div className="bg-white rounded-2xl shadow-xl p-6">
-                <h3 className="text-xl font-bold text-blue-700 mb-4">EMI Calculator</h3>
-                <div className="space-y-4">
+              <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-blue-700 mb-3 md:mb-4">EMI Calculator</h3>
+                <div className="space-y-3 md:space-y-4">
                   <div>
-                    <label className="block text-gray-700 mb-2">Loan Amount</label>
+                    <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Loan Amount</label>
                     <div className="flex items-center">
-                      <span className="bg-gray-100 px-3 py-2 rounded-l-lg border border-r-0">₹</span>
+                      <span className="bg-gray-100 px-2 md:px-3 py-1 md:py-2 rounded-l-lg border border-r-0 text-sm md:text-base">₹</span>
                       <input
                         type="number"
                         value={formData.loanAmount}
                         onChange={(e) => setFormData(prev => ({ ...prev, loanAmount: e.target.value }))}
-                        className="flex-1 px-3 py-2 border rounded-r-lg"
+                        className="flex-1 px-2 md:px-3 py-1 md:py-2 text-sm md:text-base border rounded-r-lg"
                         placeholder="Enter amount"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-gray-700 mb-2">Tenure (Months)</label>
+                    <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Tenure (Months)</label>
                     <input
                       type="range"
                       min="12"
@@ -535,99 +574,78 @@ const ApplyLoans = () => {
                       onChange={(e) => setFormData(prev => ({ ...prev, loanTenure: e.target.value }))}
                       className="w-full"
                     />
-                    <div className="flex justify-between text-sm text-gray-600">
+                    <div className="flex justify-between text-xs md:text-sm text-gray-600">
                       <span>12</span>
-                      <span>{formData.loanTenure} months</span>
+                      <span className="font-semibold">{formData.loanTenure} months</span>
                       <span>84</span>
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-gray-700 mb-2">Interest Rate</label>
-                    <div className="text-center p-3 bg-blue-50 rounded-lg">
-                      <span className="text-2xl font-bold text-blue-700">
+                    <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Interest Rate</label>
+                    <div className="text-center p-2 md:p-3 bg-blue-50 rounded-lg">
+                      <span className="text-lg md:text-2xl font-bold text-blue-700">
                         {interestRates[formData.loanType]}
                       </span>
-                      <p className="text-sm text-gray-600 mt-1">per annum</p>
+                      <p className="text-xs md:text-sm text-gray-600 mt-1">per annum</p>
                     </div>
                   </div>
                   
                   {/* EMI Result */}
-                  <div className="mt-6 p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl text-white">
-                    <p className="text-sm">Monthly EMI</p>
-                    <p className="text-3xl font-bold mt-1">₹ {calculateEMI()}</p>
-                    <p className="text-sm mt-2 opacity-90">
-                      Total Payment: ₹ {(parseFloat(calculateEMI()) * parseInt(formData.loanTenure)).toFixed(2)}
+                  <div className="mt-4 md:mt-6 p-3 md:p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg md:rounded-xl text-white">
+                    <p className="text-xs md:text-sm">Monthly EMI</p>
+                    <p className="text-xl md:text-3xl font-bold mt-1">₹ {calculateEMI()}</p>
+                    <p className="text-xs md:text-sm mt-2 opacity-90">
+                      Total: ₹ {(parseFloat(calculateEMI()) * parseInt(formData.loanTenure)).toFixed(2)}
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* Required Documents */}
-              <div className="bg-white rounded-2xl shadow-xl p-6">
-                <h3 className="text-xl font-bold text-blue-700 mb-4">Required Documents</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-green-600 text-sm">✓</span>
-                    </div>
-                    <span className="text-gray-700">PAN Card</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-green-600 text-sm">✓</span>
-                    </div>
-                    <span className="text-gray-700">Aadhar Card</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-green-600 text-sm">✓</span>
-                    </div>
-                    <span className="text-gray-700">Latest 3 Months Bank Statement</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-green-600 text-sm">✓</span>
-                    </div>
-                    <span className="text-gray-700">Salary Slips (Last 3 Months)</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-green-600 text-sm">✓</span>
-                    </div>
-                    <span className="text-gray-700">Address Proof</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-green-600 text-sm">✓</span>
-                    </div>
-                    <span className="text-gray-700">Passport Size Photos (2)</span>
-                  </li>
+              <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-blue-700 mb-3 md:mb-4">Required Documents</h3>
+                <ul className="space-y-2 md:space-y-3">
+                  {[
+                    "PAN Card",
+                    "Aadhar Card",
+                    "Latest 3 Months Bank Statement",
+                    "Salary Slips (Last 3 Months)",
+                    "Address Proof",
+                    "Passport Size Photos (2)"
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center text-sm md:text-base">
+                      <div className="w-5 h-5 md:w-6 md:h-6 bg-green-100 rounded-full flex items-center justify-center mr-2 md:mr-3 flex-shrink-0">
+                        <span className="text-green-600 text-xs md:text-sm">✓</span>
+                      </div>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               {/* Benefits */}
-              <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-xl p-6 text-white">
-                <h3 className="text-xl font-bold mb-4">Why Choose Us?</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <span className="text-xl mr-3">⚡</span>
+              <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 text-white">
+                <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Why Choose Us?</h3>
+                <ul className="space-y-2 md:space-y-3">
+                  <li className="flex items-center text-sm md:text-base">
+                    <span className="text-lg md:text-xl mr-2 md:mr-3">⚡</span>
                     <span>Instant Approval within 24 Hours</span>
                   </li>
-                  <li className="flex items-center">
-                    <span className="text-xl mr-3">🏦</span>
+                  <li className="flex items-center text-sm md:text-base">
+                    <span className="text-lg md:text-xl mr-2 md:mr-3">🏦</span>
                     <span>Lowest Interest Rates</span>
                   </li>
-                  <li className="flex items-center">
-                    <span className="text-xl mr-3">📄</span>
+                  <li className="flex items-center text-sm md:text-base">
+                    <span className="text-lg md:text-xl mr-2 md:mr-3">📄</span>
                     <span>Minimal Documentation</span>
                   </li>
-                  <li className="flex items-center">
-                    <span className="text-xl mr-3">🛡️</span>
+                  <li className="flex items-center text-sm md:text-base">
+                    <span className="text-lg md:text-xl mr-2 md:mr-3">🛡️</span>
                     <span>100% Safe & Secure</span>
                   </li>
-                  <li className="flex items-center">
-                    <span className="text-xl mr-3">📱</span>
+                  <li className="flex items-center text-sm md:text-base">
+                    <span className="text-lg md:text-xl mr-2 md:mr-3">📱</span>
                     <span>Online Application Process</span>
                   </li>
                 </ul>
@@ -635,21 +653,21 @@ const ApplyLoans = () => {
             </div>
           </div>
 
-          {/* Call to Action */}
-          <div className="mt-12 text-center">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-3">Need Help with Your Application?</h3>
-              <p className="mb-6 opacity-90">Our loan experts are available 24/7 to assist you</p>
-              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          {/* Call to Action - Responsive */}
+          <div className="mt-8 md:mt-12">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl md:rounded-2xl p-4 md:p-8 text-white">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3">Need Help with Your Application?</h3>
+              <p className="text-sm md:text-base mb-4 md:mb-6 opacity-90">Our loan experts are available 24/7 to assist you</p>
+              <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
                 <a 
-                  href="tel:+9118001234857" 
-                  className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100"
+                  href="tel:+91040-29331883" 
+                  className="px-4 md:px-6 py-2 md:py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 text-sm md:text-base text-center"
                 >
-                  📞 Call Now: 1800-123-4857
+                  📞 Call Now: 040-29331883
                 </a>
                 <Link 
                   to="/contact" 
-                  className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600"
+                  className="px-4 md:px-6 py-2 md:py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 text-sm md:text-base text-center"
                 >
                   📝 Contact Us
                 </Link>
@@ -659,50 +677,50 @@ const ApplyLoans = () => {
         </div>
       </div>
 
-      {/* Success Modal */}
+      {/* Success Modal - Responsive */}
       {showSuccess && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-8">
+          <div className="bg-white rounded-xl md:rounded-2xl max-w-md w-full p-4 md:p-8 max-h-[90vh] overflow-y-auto">
             <div className="text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                <svg className="w-8 h-8 md:w-10 md:h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Application Submitted!</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">Application Submitted!</h3>
+              <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
                 Your loan application has been received successfully.
               </p>
               
-              <div className="bg-blue-50 rounded-lg p-4 mb-6">
-                <p className="text-sm text-gray-600">Application ID</p>
-                <p className="text-xl font-bold text-blue-700">{applicationId}</p>
-                <p className="text-sm text-gray-500 mt-2">
+              <div className="bg-blue-50 rounded-lg p-3 md:p-4 mb-4 md:mb-6">
+                <p className="text-xs md:text-sm text-gray-600">Application ID</p>
+                <p className="text-lg md:text-xl font-bold text-blue-700">{applicationId}</p>
+                <p className="text-xs md:text-sm text-gray-500 mt-2">
                   Save this ID for future reference
                 </p>
               </div>
               
-              <p className="text-gray-700 mb-6">
+              <p className="text-sm md:text-base text-gray-700 mb-4 md:mb-6">
                 Our loan executive will contact you within <span className="font-semibold">24 hours</span>.
               </p>
               
-              <div className="flex flex-col space-y-3">
+              <div className="flex flex-col space-y-2 md:space-y-3">
                 <button
                   onClick={handleContinueBrowsing}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold"
+                  className="w-full px-4 md:px-6 py-2 md:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold text-sm md:text-base"
                 >
                   Continue Browsing
                 </button>
                 <button
                   onClick={handleApplyNewLoan}
-                  className="px-6 py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 font-semibold text-center"
+                  className="w-full px-4 md:px-6 py-2 md:py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 font-semibold text-sm md:text-base"
                 >
                   Apply for Another Loan
                 </button>
                 <Link
                   to="/"
-                  className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold text-center"
+                  className="w-full px-4 md:px-6 py-2 md:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold text-sm md:text-base text-center"
                 >
                   Go to Homepage
                 </Link>

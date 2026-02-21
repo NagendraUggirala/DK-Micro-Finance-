@@ -9,8 +9,9 @@ const Footer = () => {
      { path: "/", label: "Home" },
     { path: "/initiatives", label: "Our Loans" },
     { path: "/volunteer", label: "Bank Partners" },
+     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
-    { path: "/about", label: "About" },
+   
   ];
 
   const openLegalModal = (type) => {
@@ -162,22 +163,23 @@ const Footer = () => {
                 <div className="flex items-center space-x-3 mb-4">
                   {/* Company Logo */}
            <div className="flex-shrink-0">
-  <div className="w-14 h-14 rounded-full overflow-hidden shadow-md bg-white flex items-center justify-center">
+  <div className="w-16 h-16 rounded-full overflow-hidden shadow-md bg-white flex items-center justify-center">
     <img 
-      src="/images/logo.png"
+      src="/images/logo1.png"
       alt="DK Logo"
       className="w-full h-full object-cover scale-150"
     />
   </div>
 </div>
     {/* Text immediately to the side */}
-                  <div className="flex flex-col">
-                    <h2 className="text-xl md:text-2xl font-bold">
-                      <span className="text-orange-400">DK</span> 
-                      <span className="text-white"> Micro Finance</span>
-                    </h2>
-                    <p className="text-blue-200 text-xs md:text-sm italic">"We Understand Your World"</p>
-                  </div>
+                 <div className="flex flex-col">
+  <h2 className="text-xl md:text-2xl font-bold">
+   <span className="text-orange-400">DK</span>
+<span className="text-blue-400"> Micro Finance</span>
+
+  </h2>
+ <p className="text-gray-300 italic">"We Understand Your World"</p>
+</div>
                 </div>
 
                 <div className="text-left">
@@ -222,24 +224,34 @@ const Footer = () => {
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
                       </svg>
                       <span className="text-gray-300 text-left">
-                        Financial District,<br />
-                        Gachibowli, Hyderabad<br />
-                        Telangana - 500032
+                         DK Micro Finance Private Limited,<br />
+2nd Floor, Bloossom Heights,<br />
+Patrika Nagar, Hitech City,<br/>
+Madhapur, Hyderabad.<br/>
+
+                      
+Telangana - 500081, India
                       </span>
                     </div>
+
+
+
+
+
+
 
                     <div className="flex items-center space-x-2">
                       <svg className="w-4 h-4 text-orange-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                       </svg>
-                      <span className="text-gray-300">+91 1800 123 4857</span>
+                      <span className="text-gray-300">+91  99667 11883</span>
                     </div>
 
                     <div className="flex items-center space-x-2">
                       <svg className="w-4 h-4 text-orange-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                       </svg>
-                      <span className="text-gray-300">info@dkmicrofinance.com</span>
+                      <span className="text-gray-300">dkmicrofinancepvtltd@gmail.com</span>
                     </div>
                   </div>
                 </div>
@@ -250,12 +262,8 @@ const Footer = () => {
                 <h3 className="text-lg font-semibold mb-3 text-orange-400">Business Hours</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Monday - Friday</span>
+                    <span className="text-gray-300">Monday - Saturday</span>
                     <span className="text-orange-400">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-300">Saturday</span>
-                    <span className="text-orange-400">9:00 AM - 2:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-300">Sunday</span>

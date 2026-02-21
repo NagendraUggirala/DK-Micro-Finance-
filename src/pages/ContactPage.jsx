@@ -1,4 +1,4 @@
-// ContactAdvancedWithMapBottom.jsx
+
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -80,9 +80,9 @@ const ContactAdvancedWithMapBottom = () => {
       ),
       title: "Phone / WhatsApp",
       description: "Available for loan queries & support",
-      details: ["+91 1800 123 4857", "+91 98765 43210"],
+      details: ["Landline: 040-29331883", "Mobile: 99667 11883"],
       action: "Call Now",
-      link: "tel:+9118001234857",
+      link: "tel:+914029331883",
       color: "from-green-500 to-green-600",
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
@@ -96,9 +96,9 @@ const ContactAdvancedWithMapBottom = () => {
       ),
       title: "Email Us",
       description: "Send us your loan queries",
-      details: ["info@dkmicrofinance.com", "support@dkmicrofinance.com"],
+      details: ["dkmicrofinancepvtltd@gmail.com"],
       action: "Send Email",
-      link: "mailto:info@dkmicrofinance.com",
+      link: "mailto:dkmicrofinancepvtltd@gmail.com",
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
       borderColor: "border-purple-200",
@@ -214,7 +214,7 @@ const ContactAdvancedWithMapBottom = () => {
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="tel:+9118001234857" 
+                href="tel:+914029331883" 
                 className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-orange-500/25 text-sm flex items-center justify-center gap-2"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -289,12 +289,8 @@ const ContactAdvancedWithMapBottom = () => {
                     <h3 className="font-semibold text-slate-800 mb-3">Business Hours</h3>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Monday - Friday</span>
+                        <span className="text-slate-600">Monday - Saturday</span>
                         <span className="text-blue-600 font-medium">9:00 AM - 6:00 PM</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-600">Saturday</span>
-                        <span className="text-blue-600 font-medium">9:00 AM - 2:00 PM</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-600">Sunday</span>
@@ -381,7 +377,7 @@ const ContactAdvancedWithMapBottom = () => {
                           name="phone" 
                           value={formData.phone} 
                           onChange={handleChange} 
-                          placeholder="+91 98765 43210" 
+                          placeholder="+91 99667 11883" 
                           error={errors.phone} 
                           required 
                         />
