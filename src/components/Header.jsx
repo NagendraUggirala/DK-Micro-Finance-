@@ -31,8 +31,8 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-shadow duration-300 bg-white border-b border-gray-200 ${
-        isScrolled ? "shadow-md" : "shadow-none"
+      className={`sticky top-0 z-50 transition-shadow duration-300 bg-slate-50 border-b border-slate-200 ${
+        isScrolled ? "shadow-lg shadow-slate-200/50" : "shadow-none"
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
@@ -57,11 +57,11 @@ const Header = () => {
 
 
             <div className="leading-tight overflow-hidden">
-              <h1 className="text-sm sm:text-base md:text-2xl font-bold text-gray-900 whitespace-nowrap">
-                <span className="text-orange-500">DK  </span>
-                <span className="text-blue-700">Micro Finance</span>
+              <h1 className="text-sm sm:text-base md:text-2xl font-bold text-slate-900 whitespace-nowrap">
+                <span className="text-amber-500">DK  </span>
+                <span className="text-emerald-700">Micro Finance</span>
               </h1>
-              <p className="hidden sm:block text-[11px] md:text-xs text-gray-600 italic">
+              <p className="hidden sm:block text-[11px] md:text-xs text-slate-600 italic">
                 "We Understand Your World"
               </p>
             </div>
@@ -74,10 +74,10 @@ const Header = () => {
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className={`px-4 py-2 rounded-lg text-base font-medium transition-all ${
-                      isActiveLink(item.path)
-                        ? "text-blue-700 bg-blue-50 border border-blue-200"
-                        : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+className={`px-4 py-2 rounded-xl text-base font-medium transition-all ${
+                        isActiveLink(item.path)
+                        ? "text-emerald-700 bg-emerald-50 ring-2 ring-emerald-200"
+                        : "text-slate-700 hover:text-emerald-600 hover:bg-slate-100"
                     }`}
                   >
                     {item.label}
@@ -90,7 +90,7 @@ const Header = () => {
           {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition"
+            className="lg:hidden p-2 text-slate-700 hover:text-emerald-600 hover:bg-slate-100 rounded-xl transition"
           >
             {isMenuOpen ? "✕" : "☰"}
           </button>
@@ -98,17 +98,17 @@ const Header = () => {
 
         {/* MOBILE MENU */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 pb-4">
+          <div className="lg:hidden border-t border-slate-200 pb-4">
             <ul className="space-y-2 pt-3">
               {navItems.map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block px-4 py-3 rounded-lg text-base font-medium ${
+                    className={`block px-4 py-3 rounded-xl text-base font-medium ${
                       isActiveLink(item.path)
-                        ? "bg-blue-50 text-blue-700 border border-blue-200"
-                        : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                        ? "bg-emerald-50 text-emerald-700 ring-2 ring-emerald-200"
+                        : "text-slate-700 hover:bg-slate-100 hover:text-emerald-600"
                     }`}
                   >
                     {item.label}
@@ -120,7 +120,7 @@ const Header = () => {
               <li className="pt-2">
                 <button
                   onClick={handleCTAClick}
-                  className="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition shadow-md"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-teal-700 transition shadow-lg"
                 >
                   Join Us
                 </button>

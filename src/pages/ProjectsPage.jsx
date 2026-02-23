@@ -426,7 +426,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50">
       {/* Toast Notification */}
       <AnimatePresence>
         {showToast && (
@@ -437,15 +437,15 @@ const Projects = () => {
             exit="exit"
             className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 max-w-md w-full mx-4"
           >
-            <div className="bg-white border-l-4 border-orange-500 text-orange-700 p-4 rounded-lg shadow-lg">
+            <div className="bg-white border-l-4 border-amber-500 text-amber-700 p-4 rounded-lg shadow-lg">
               <div className="flex items-center">
-                <div className="text-orange-500 mr-3">⚠️</div>
+                <div className="text-amber-500 mr-3">⚠️</div>
                 <div className="flex-1">
                   <p className="text-sm font-medium">{toastMessage}</p>
                 </div>
                 <button
                   onClick={() => setShowToast(false)}
-                  className="text-orange-500 hover:text-orange-700"
+                  className="text-amber-500 hover:text-amber-700"
                 >
                   ✕
                 </button>
@@ -456,10 +456,10 @@ const Projects = () => {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative py-16 bg-gradient-to-br from-blue-100 to-cyan-100">
+      <section className="relative py-16 bg-gradient-to-br from-slate-100 to-emerald-100">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -469,11 +469,11 @@ const Projects = () => {
             transition={{ duration: 1 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-blue-700">
-              Premium <span className="text-cyan-600">Land Properties</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-800">
+              Premium <span className="text-emerald-600">Land Properties</span>
             </h1>
-            <div className="w-24 h-1 bg-cyan-500 mx-auto mb-8"></div>
-            <p className="text-xl md:text-2xl text-blue-700 mb-8 leading-relaxed">
+            <div className="w-24 h-1 bg-amber-500 mx-auto mb-8"></div>
+            <p className="text-xl md:text-2xl text-slate-700 mb-8 leading-relaxed">
               Discover exclusive plots with strategic locations, complete legal assurance, and excellent investment potential
             </p>
           </motion.div>
@@ -493,10 +493,10 @@ const Projects = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-cyan-600 mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-emerald-600 mb-2">
                   {stat.number}{stat.suffix || '+'}
                 </div>
-                <div className="text-blue-700 font-medium">{stat.label}</div>
+                <div className="text-slate-700 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -504,7 +504,7 @@ const Projects = () => {
       </section>
 
       {/* Nearby Famous Areas Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-emerald-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -516,7 +516,7 @@ const Projects = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">
               Strategic Locations Near Famous Landmarks
             </h2>
-            <p className="text-lg text-blue-700 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
               Click on any landmark to view available plots in that area
             </p>
           </motion.div>
@@ -531,17 +531,17 @@ const Projects = () => {
                 viewport={{ once: true }}
                 className={`bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border cursor-pointer transform hover:scale-105 transition-all duration-300 ${
                   landmarkFilter?.id === area.id 
-                    ? 'border-cyan-500 border-2' 
-                    : 'border-blue-100'
+                    ? 'border-emerald-500 border-2' 
+                    : 'border-slate-100'
                 }`}
                 onClick={() => handleNearbyAreaClick(area)}
               >
                 <div className="text-4xl mb-4">{area.icon}</div>
-                <h3 className="text-xl font-semibold text-blue-700 mb-2">{area.name}</h3>
-                <p className="text-blue-700 mb-4">{area.description}</p>
-                <div className="text-cyan-600 font-semibold flex items-center justify-between">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">{area.name}</h3>
+                <p className="text-slate-700 mb-4">{area.description}</p>
+                <div className="text-emerald-600 font-semibold flex items-center justify-between">
                   <span>{area.projects} Projects Nearby</span>
-                  <span className="text-blue-500">→</span>
+                  <span className="text-emerald-500">→</span>
                 </div>
               </motion.div>
             ))}
@@ -587,8 +587,8 @@ const Projects = () => {
                   }}
                   className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                     activeFilter === filter.id && !landmarkFilter
-                      ? 'bg-cyan-500 text-white shadow-lg'
-                      : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
+                      ? 'bg-emerald-500 text-white shadow-lg'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                   }`}
                 >
                   {filter.label}
@@ -637,7 +637,7 @@ const Projects = () => {
                     animate="visible"
                     whileHover="hover"
                     layout
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer border border-blue-100"
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer border border-slate-100"
                     onClick={() => setSelectedProject(project)}
                   >
                     {/* Project Image */}
@@ -652,13 +652,13 @@ const Projects = () => {
 
                     {/* Project Info */}
                     <div className="p-6">
-                      <h3 className="text-xl font-bold text-blue-700 mb-2">{project.title}</h3>
+                      <h3 className="text-xl font-bold text-slate-800 mb-2">{project.title}</h3>
                       <p className="text-blue-600 text-sm mb-4">{project.location}</p>
                       <p className="text-blue-700 mb-4 line-clamp-2">{project.description}</p>
                       
                       <div className="flex justify-between items-center mb-4">
                         <div>
-                          <div className="text-lg font-bold text-cyan-600">{project.price}</div>
+                          <div className="text-lg font-bold text-emerald-600">{project.price}</div>
                           <div className="text-sm text-blue-600">{project.area}</div>
                         </div>
                         <div className="text-right">
@@ -672,19 +672,19 @@ const Projects = () => {
                         {project.features.slice(0, 3).map((feature, index) => (
                           <span
                             key={index}
-                            className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs rounded"
+                            className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded"
                           >
                             {feature}
                           </span>
                         ))}
                         {project.features.length > 3 && (
-                          <span className="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded">
+                          <span className="px-2 py-1 bg-slate-50 text-slate-600 text-xs rounded">
                             +{project.features.length - 3} more
                           </span>
                         )}
                       </div>
 
-                      <button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg font-semibold transition-colors">
+                      <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-xl font-semibold transition-colors">
                         View Plot Details
                       </button>
                     </div>
@@ -713,7 +713,7 @@ const Projects = () => {
                 </p>
                 <button
                   onClick={handleClearFilters}
-                  className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
                 >
                   View All Properties
                 </button>
@@ -724,7 +724,7 @@ const Projects = () => {
       </section>
 
       {/* Why Choose Our Plots Section */}
-      <section className="py-16 bg-gradient-to-br from-cyan-50 to-blue-50">
+      <section className="py-16 bg-gradient-to-br from-emerald-50 to-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -736,7 +736,7 @@ const Projects = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">
               Why Choose Anand Realtyy Plots?
             </h2>
-            <p className="text-lg text-blue-700 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-700 mb-12 max-w-2xl mx-auto">
               We offer the most secure and profitable land investment opportunities with complete transparency
             </p>
 
@@ -779,11 +779,11 @@ const Projects = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-md text-center border border-blue-100"
+                  className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-md text-center border border-slate-100"
                 >
                   <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-blue-700 mb-3">{feature.title}</h3>
-                  <p className="text-blue-700">{feature.description}</p>
+<h3 className="text-xl font-semibold text-slate-800 mb-3">{feature.title}</h3>
+                <p className="text-slate-700">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -792,7 +792,7 @@ const Projects = () => {
       </section>
 
 {/* CTA Section */}
-<section className="py-16 bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
+<section className="py-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
   <div className="container mx-auto px-4 text-center">
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -803,20 +803,20 @@ const Projects = () => {
       <h2 className="text-3xl md:text-4xl font-bold mb-6">
         Ready to Invest in Land?
       </h2>
-      <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+      <p className="text-xl text-slate-200 mb-8 max-w-2xl mx-auto">
         Book a site visit today and secure your piece of prime land with complete legal assurance and Vastu benefits.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Link 
           to="/contact" 
-          className="bg-white text-cyan-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"
+          className="bg-white text-emerald-700 hover:bg-slate-50 px-8 py-3 rounded-xl font-semibold transition-colors"
         >
           Book Site Visit
         </Link>
         <a 
           href="./images/Brochure.png" 
           download="Anand-Realtyy-Brochure.png"
-          className="border-2 border-white text-white hover:bg-white hover:text-cyan-600 px-8 py-3 rounded-lg font-semibold transition-colors"
+          className="border-2 border-white text-white hover:bg-white hover:text-slate-800 px-8 py-3 rounded-xl font-semibold transition-colors"
         >
           Download Brochure
         </a>
@@ -865,15 +865,15 @@ const Projects = () => {
                 <p className="text-blue-700 mb-6">{selectedProject.description}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-cyan-50 p-4 rounded-lg">
+                  <div className="bg-emerald-50 p-4 rounded-xl">
                     <div className="text-sm text-blue-600 mb-1">Price Range</div>
-                    <div className="text-xl font-bold text-cyan-600">{selectedProject.price}</div>
+                    <div className="text-xl font-bold text-emerald-600">{selectedProject.price}</div>
                   </div>
-                  <div className="bg-cyan-50 p-4 rounded-lg">
+                  <div className="bg-emerald-50 p-4 rounded-xl">
                     <div className="text-sm text-blue-600 mb-1">Plot Sizes</div>
                     <div className="text-xl font-bold text-blue-700">{selectedProject.area}</div>
                   </div>
-                  <div className="bg-cyan-50 p-4 rounded-lg">
+                  <div className="bg-emerald-50 p-4 rounded-xl">
                     <div className="text-sm text-blue-600 mb-1">Available Plots</div>
                     <div className="text-xl font-bold text-blue-700">{selectedProject.units}</div>
                   </div>
@@ -888,7 +888,7 @@ const Projects = () => {
                         const area = nearbyAreasWithAccurateCounts.find(a => a.filter === areaId);
                         return area ? (
                           <div key={index} className="flex items-center">
-                            <span className="text-cyan-500 mr-2">📍</span>
+                            <span className="text-emerald-500 mr-2">📍</span>
                             <span className="text-blue-700">{area.name}</span>
                           </div>
                         ) : null;
@@ -942,13 +942,13 @@ const Projects = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     to="/contact"
-                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors"
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-semibold text-center transition-colors"
                   >
                     Book Site Visit
                   </Link>
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="border-2 border-blue-300 text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-semibold transition-colors"
+                    className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 rounded-xl font-semibold transition-colors"
                   >
                     Close
                   </button>

@@ -256,7 +256,7 @@ const Home = () => {
         {[...Array(5)].map((_, index) => (
           <span
             key={index}
-            className={`text-lg ${index < rating ? 'text-yellow-400' : 'text-gray-300'
+            className={`text-lg ${index < rating ? 'text-amber-400' : 'text-slate-300'
               }`}
           >
             ★
@@ -348,7 +348,7 @@ const Home = () => {
                 backgroundImage: `url(${heroSlides[currentHeroSlide].image})`
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-800/80 via-blue-700/70 to-blue-600/60"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-800/85 via-emerald-900/75 to-teal-900/70"></div>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -369,22 +369,22 @@ const Home = () => {
                   <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                     {heroSlides[currentHeroSlide].title}
                   </h1>
-                  <p className="text-xl md:text-2xl lg:text-3xl text-orange-300 font-semibold mb-4 md:mb-6">
+                  <p className="text-xl md:text-2xl lg:text-3xl text-amber-300 font-semibold mb-4 md:mb-6">
                     {heroSlides[currentHeroSlide].subtitle}
                   </p>
-                  <p className="text-base md:text-lg lg:text-xl text-blue-100 mb-6 md:mb-8 max-w-2xl leading-relaxed">
+                  <p className="text-base md:text-lg lg:text-xl text-slate-200 mb-6 md:mb-8 max-w-2xl leading-relaxed">
                     {heroSlides[currentHeroSlide].description}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
                       to="/apply"
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 md:px-10 md:py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl text-center"
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 md:px-10 md:py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl text-center"
                     >
                       {heroSlides[currentHeroSlide].cta}
                     </Link>
                     <Link
                       to="/initiatives"
-                      className="border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-3 md:px-10 md:py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center"
+                      className="border-2 border-white text-white hover:bg-white hover:text-slate-800 px-8 py-3 md:px-10 md:py-4 rounded-xl font-bold text-lg transition-all duration-300 text-center"
                     >
                       View All Loans
                     </Link>
@@ -421,7 +421,7 @@ const Home = () => {
             <button
               key={index}
               onClick={() => setCurrentHeroSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentHeroSlide ? 'bg-orange-500 w-8' : 'bg-white/50 hover:bg-white/70'
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentHeroSlide ? 'bg-emerald-500 w-8' : 'bg-white/50 hover:bg-white/70'
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -430,7 +430,7 @@ const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -440,11 +440,11 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-center mb-8 md:mb-12"
             >
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mb-3 md:mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-800 mb-3 md:mb-4">
                 Welcome to DK Micro Finance
               </h2>
-              <div className="w-16 md:w-20 h-1 bg-orange-500 mx-auto mb-4 md:mb-6"></div>
-              <p className="text-gray-700 mb-3 md:mb-4 leading-relaxed 
+              <div className="w-16 md:w-20 h-1 bg-amber-500 mx-auto mb-4 md:mb-6"></div>
+              <p className="text-slate-700 mb-3 md:mb-4 leading-relaxed 
               text-sm md:text-base 
               text-left md:text-center">
                 DK Micro Finance Private Limited is your trusted financial partner, committed to providing accessible
@@ -463,12 +463,12 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="px-2"
               >
-                <h3 className="text-xl md:text-2xl font-bold text-blue-700 mb-3 md:mb-4">Our Philosophy</h3>
-                <p className="text-gray-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
+                <h3 className="text-xl md:text-2xl font-bold text-emerald-800 mb-3 md:mb-4">Our Philosophy</h3>
+                <p className="text-slate-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
                   "We Understand Your World" - This is more than just a slogan for us. It's our commitment to
                   understanding your unique financial needs and providing solutions that truly work for you.
                 </p>
-                <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                <p className="text-slate-700 leading-relaxed text-sm md:text-base">
                   With partnerships across major banks and private finance institutions, we offer comprehensive
                   loan products including home loans, mortgage loans, construction loans, hospital loans, school
                   loans, and college loans - all designed to help you build a better future.
@@ -480,25 +480,25 @@ const Home = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-white p-4 md:p-6 rounded-xl shadow-lg mx-2"
+                className="bg-white p-4 md:p-6 rounded-2xl shadow-lg border-l-4 border-emerald-500 mx-2"
               >
-                <h4 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">Our Loan Products</h4>
+                <h4 className="text-lg md:text-xl font-semibold text-emerald-800 mb-3 md:mb-4">Our Loan Products</h4>
                 <ul className="space-y-2 md:space-y-3">
                   <li className="flex items-start">
-                    <span className="text-orange-500 mr-2 md:mr-3 mt-1 text-sm">•</span>
-                    <span className="text-gray-700 text-sm md:text-base">Home Loans for dream home purchase</span>
+                    <span className="text-amber-500 mr-2 md:mr-3 mt-1 text-sm">•</span>
+                    <span className="text-slate-700 text-sm md:text-base">Home Loans for dream home purchase</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-500 mr-2 md:mr-3 mt-1 text-sm">•</span>
-                    <span className="text-gray-700 text-sm md:text-base">Mortgage Loans against property</span>
+                    <span className="text-amber-500 mr-2 md:mr-3 mt-1 text-sm">•</span>
+                    <span className="text-slate-700 text-sm md:text-base">Mortgage Loans against property</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-500 mr-2 md:mr-3 mt-1 text-sm">•</span>
-                    <span className="text-gray-700 text-sm md:text-base">Construction Loans with stage-wise disbursement</span>
+                    <span className="text-amber-500 mr-2 md:mr-3 mt-1 text-sm">•</span>
+                    <span className="text-slate-700 text-sm md:text-base">Construction Loans with stage-wise disbursement</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-500 mr-2 md:mr-3 mt-1 text-sm">•</span>
-                    <span className="text-gray-700 text-sm md:text-base">Education Loans for schools and colleges</span>
+                    <span className="text-amber-500 mr-2 md:mr-3 mt-1 text-sm">•</span>
+                    <span className="text-slate-700 text-sm md:text-base">Education Loans for schools and colleges</span>
                   </li>
                 </ul>
               </motion.div>
@@ -508,7 +508,7 @@ const Home = () => {
       </section>
 
       {/* Loan Products Section */}
-      <section className="relative py-8 md:py-12 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="relative py-8 md:py-12 bg-gradient-to-br from-slate-50 to-emerald-50">
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <motion.div
@@ -517,10 +517,10 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-6 md:mb-8"
           >
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mb-2 md:mb-3">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-800 mb-2 md:mb-3">
               Our Loan Products
             </h1>
-            <p className="text-blue-600 text-sm md:text-base">
+            <p className="text-emerald-600 text-sm md:text-base">
               Tailored financial solutions for every stage of life
             </p>
           </motion.div>
@@ -540,7 +540,7 @@ const Home = () => {
                     stiffness: 100
                   }}
                   whileHover={{ y: -10, scale: 1.02 }}
-                  className="group relative bg-white rounded-2xl shadow-2xl overflow-hidden cursor-pointer"
+                  className="group relative bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden cursor-pointer hover:shadow-2xl hover:border-emerald-200 transition-all"
                 >
                   {/* Interest Rate Badge */}
                   <div className={`absolute top-4 right-4 ${product.badgeColor} text-white px-3 py-1 rounded-full text-xs font-bold z-10 shadow-lg`}>
@@ -561,13 +561,13 @@ const Home = () => {
 
                   {/* Content Section */}
                   <div className="p-4 md:p-5">
-                    <h3 className="text-lg md:text-xl font-bold text-blue-700 mb-1 md:mb-2 leading-tight line-clamp-1">
+                    <h3 className="text-lg md:text-xl font-bold text-emerald-800 mb-1 md:mb-2 leading-tight line-clamp-1">
                       {product.title}
                     </h3>
-                    <p className="text-sm md:text-base text-orange-600 font-semibold mb-2 md:mb-3">
+                    <p className="text-sm md:text-base text-amber-600 font-semibold mb-2 md:mb-3">
                       {product.subtitle}  {/* This should only show subtitle, not duplicate title */}
                     </p>
-                    <p className="text-xs md:text-sm text-gray-600 mb-3 md:mb-4 leading-relaxed line-clamp-2">
+                    <p className="text-xs md:text-sm text-slate-600 mb-3 md:mb-4 leading-relaxed line-clamp-2">
                       {product.description}
                     </p>
 
@@ -579,7 +579,7 @@ const Home = () => {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.1 + idx * 0.1 + 0.3 }}
-                          className="flex items-center text-xs md:text-sm text-gray-700"
+                          className="flex items-center text-xs md:text-sm text-slate-700"
                         >
                           <span className="text-green-500 mr-1.5 text-sm">✓</span>
                           <span className="line-clamp-1">{feature}</span>
@@ -591,13 +591,13 @@ const Home = () => {
                     <div className="flex flex-col gap-2">
                       <Link
                         to="/apply"
-                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md text-xs md:text-sm text-center"
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-md text-xs md:text-sm text-center"
                       >
                         Apply Now
                       </Link>
                       <Link
                         to={`/about`}
-                        className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 text-xs md:text-sm text-center"
+                        className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 text-xs md:text-sm text-center"
                       >
                         Learn More
                       </Link>
@@ -614,8 +614,8 @@ const Home = () => {
               transition={{ delay: 0.6 }}
               className="mt-6 md:mt-8 text-center"
             >
-              <p className="text-blue-600 text-sm md:text-base">
-                <span className="text-orange-500 font-semibold">"We Understand Your World"</span> - Building Trust, Delivering Excellence
+              <p className="text-emerald-600 text-sm md:text-base">
+                <span className="text-amber-500 font-semibold">"We Understand Your World"</span> - Building Trust, Delivering Excellence
               </p>
             </motion.div>
           </div>
@@ -630,10 +630,10 @@ const Home = () => {
                     max-w-6xl mx-auto">
 
             {[
-              { number: "5000+", label: "Happy Customers", icon: FaUsers, color: "text-blue-500" },
-              { number: "₹250+ Cr", label: "Loan Disbursed", icon: FaMoneyBill, color: "text-green-500" },
-              { number: "24-48", label: "Hours Approval", icon: FaClock, color: "text-orange-500" },
-              { number: "98%", label: "Customer Satisfaction", icon: FaAward, color: "text-purple-500" }
+              { number: "5000+", label: "Happy Customers", icon: FaUsers, color: "text-emerald-500" },
+              { number: "₹250+ Cr", label: "Loan Disbursed", icon: FaMoneyBill, color: "text-teal-500" },
+              { number: "24-48", label: "Hours Approval", icon: FaClock, color: "text-amber-500" },
+              { number: "98%", label: "Customer Satisfaction", icon: FaAward, color: "text-violet-500" }
             ].map((stat, index) => {
               const IconComponent = stat.icon;
               return (
@@ -650,12 +650,12 @@ const Home = () => {
                   </div>
 
                   <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
-                            font-bold text-blue-700 mb-1 sm:mb-2">
+                            font-bold text-emerald-800 mb-1 sm:mb-2">
                     {stat.number}
                   </div>
 
                   <div className="text-xs sm:text-sm md:text-base 
-                            text-gray-600 font-medium">
+                            text-slate-600 font-medium">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -668,7 +668,7 @@ const Home = () => {
 
 
       {/* Loan Types Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -677,10 +677,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-800 mb-3 md:mb-4">
               Comprehensive Loan Solutions
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
+            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed px-2">
               We offer a wide range of loan products tailored to meet your specific needs
             </p>
           </motion.div>
@@ -696,17 +696,17 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
-                  className="bg-white rounded-xl shadow-lg p-4 md:p-6 text-center hover:shadow-xl transition-shadow duration-300 border border-blue-100"
+                  className="bg-white rounded-2xl shadow-lg p-4 md:p-6 text-center hover:shadow-xl transition-all duration-300 border-l-4 border-emerald-500 border border-slate-100"
                 >
-                  <div className="mb-3 md:mb-4 text-blue-600 flex justify-center">
+                  <div className="mb-3 md:mb-4 text-emerald-600 flex justify-center">
                     <LoanIcon className="text-4xl md:text-5xl" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-blue-700 mb-2 md:mb-3">{loan.title}</h3>
-                  <p className="text-gray-600 text-sm md:text-base mb-3 md:mb-4">{loan.description}</p>
-                  <div className="text-orange-600 font-bold text-sm md:text-base mb-3">{loan.interest}</div>
+                  <h3 className="text-lg md:text-xl font-bold text-emerald-800 mb-2 md:mb-3">{loan.title}</h3>
+                  <p className="text-slate-600 text-sm md:text-base mb-3 md:mb-4">{loan.description}</p>
+                  <div className="text-amber-600 font-bold text-sm md:text-base mb-3">{loan.interest}</div>
                   <ul className="space-y-1 md:space-y-2 text-left">
                     {loan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700 text-xs md:text-sm">
+                      <li key={idx} className="flex items-center text-slate-700 text-xs md:text-sm">
                         <span className="text-green-500 mr-2">✓</span>
                         {feature}
                       </li>
@@ -720,7 +720,7 @@ const Home = () => {
       </section>
 
       {/* Application Process */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-50 to-cyan-50">
+      <section className="py-12 md:py-16 bg-gradient-to-r from-slate-50 to-emerald-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -729,10 +729,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-800 mb-3 md:mb-4">
               Simple 4-Step Process
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
+            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed px-2">
               Get your loan approved quickly with our streamlined application process
             </p>
           </motion.div>
@@ -740,7 +740,7 @@ const Home = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Connecting line - centered vertically through cards */}
-              <div className="hidden lg:block absolute top-1/2 left-8 right-8 h-2 bg-blue-300 -translate-y-1/2 z-0 rounded-full"></div>
+              <div className="hidden lg:block absolute top-1/2 left-8 right-8 h-2 bg-emerald-300 -translate-y-1/2 z-0 rounded-full"></div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
                 {[
@@ -781,17 +781,17 @@ const Home = () => {
                     >
                       {/* Blue number circle with line going through center */}
                       <div className="relative mb-4">
-                        <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
+                        <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-full mx-auto flex items-center justify-center shadow-lg relative z-20">
                           <span className="text-2xl md:text-3xl font-bold text-white">{step.number}</span>
                         </div>
                       </div>
 
-                      <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg flex flex-col flex-grow h-full">
-                        <div className="mb-3 md:mb-4 text-blue-600 flex justify-center">
+                      <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-slate-100 flex flex-col flex-grow h-full">
+                        <div className="mb-3 md:mb-4 text-emerald-600 flex justify-center">
                           <StepIcon className="text-3xl md:text-4xl" />
                         </div>
-                        <h3 className="text-lg md:text-xl font-bold text-blue-700 mb-2 md:mb-3">{step.title}</h3>
-                        <p className="text-gray-600 text-sm md:text-base flex-grow">{step.description}</p>
+                        <h3 className="text-lg md:text-xl font-bold text-emerald-800 mb-2 md:mb-3">{step.title}</h3>
+                        <p className="text-slate-600 text-sm md:text-base flex-grow">{step.description}</p>
                       </div>
                     </motion.div>
                   );
@@ -812,10 +812,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-800 mb-3 md:mb-4">
               Why Choose DK Micro Finance?
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-2">
+            <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-2">
               Experience financial services that put you first
             </p>
           </motion.div>
@@ -831,13 +831,13 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
-                  className="bg-gradient-to-br from-blue-50 to-white p-4 md:p-6 rounded-xl shadow-md border border-blue-100 text-center"
+                  className="bg-gradient-to-br from-slate-50 to-white p-4 md:p-6 rounded-2xl shadow-md border-l-4 border-emerald-500 border border-slate-100 text-center"
                 >
-                  <div className="mb-3 md:mb-4 flex justify-center text-blue-600">
+                  <div className="mb-3 md:mb-4 flex justify-center text-emerald-600">
                     <FeatureIcon className="text-3xl md:text-4xl" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-2 md:mb-3 leading-tight">{feature.title}</h3>
-                  <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="text-lg md:text-xl font-semibold text-emerald-800 mb-2 md:mb-3 leading-tight">{feature.title}</h3>
+                  <p className="text-slate-600 text-xs md:text-sm leading-relaxed">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -846,7 +846,7 @@ const Home = () => {
       </section>
 
       {/* Customer Reviews Carousel */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 to-gray-50">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-slate-50 to-emerald-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -855,10 +855,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-800 mb-3 md:mb-4">
               Customer Success Stories
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-2">
+            <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-2">
               Hear from our satisfied customers who achieved their dreams with our help
             </p>
           </motion.div>
@@ -878,19 +878,19 @@ const Home = () => {
                     }`}
                 >
                   {currentReviews.map((review) => (
-                    <div key={review.id} className="bg-white rounded-xl shadow-lg p-4 md:p-6 hover:shadow-xl transition-all duration-300">
+                    <div key={review.id} className="bg-white rounded-2xl shadow-lg border border-slate-100 p-4 md:p-6 hover:shadow-xl hover:border-emerald-200 transition-all duration-300">
                       <StarRating rating={review.rating} />
-                      <blockquote className="text-gray-700 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed min-h-[80px] md:min-h-[96px]">
+                      <blockquote className="text-slate-700 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed min-h-[80px] md:min-h-[96px]">
                         "{review.comment}"
                       </blockquote>
                       <div className="flex items-center space-x-2 md:space-x-3">
-                        <div className="text-blue-600">
+                        <div className="text-emerald-600">
                           <review.avatar className="text-2xl md:text-3xl" />
                         </div>
                         <div className="flex-1">
-                          <div className="font-semibold text-gray-900 text-sm md:text-base">{review.name}</div>
-                          <div className="text-xs text-gray-600">{review.location}</div>
-                          <div className="text-xs text-gray-500">{review.date}</div>
+                          <div className="font-semibold text-slate-900 text-sm md:text-base">{review.name}</div>
+                          <div className="text-xs text-slate-600">{review.location}</div>
+                          <div className="text-xs text-slate-500">{review.date}</div>
                         </div>
                       </div>
                     </div>
@@ -904,7 +904,7 @@ const Home = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentReviewSet(index)}
-                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${index === currentReviewSet ? 'bg-orange-500' : 'bg-gray-300'
+                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${index === currentReviewSet ? 'bg-emerald-500' : 'bg-slate-300'
                       }`}
                   />
                 ))}
@@ -924,10 +924,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-800 mb-3 md:mb-4">
               Our Core Values
             </h2>
-            <p className="text-base md:text-lg text-gray-600 px-2">
+            <p className="text-base md:text-lg text-slate-600 px-2">
               The principles that guide every aspect of our service
             </p>
           </motion.div>
@@ -944,11 +944,11 @@ const Home = () => {
                   viewport={{ once: true }}
                   className="text-center p-4 md:p-6"
                 >
-                  <div className="mb-3 md:mb-4 text-orange-500 flex justify-center">
+                  <div className="mb-3 md:mb-4 text-amber-500 flex justify-center">
                     <ValueIcon className="text-3xl md:text-4xl" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-2 md:mb-3 leading-tight">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">{value.description}</p>
+                  <h3 className="text-lg md:text-xl font-semibold text-emerald-800 mb-2 md:mb-3 leading-tight">{value.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">{value.description}</p>
                 </motion.div>
               );
             })}
@@ -957,7 +957,7 @@ const Home = () => {
       </section>
 
       {/* Partner Banks Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -966,10 +966,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-700 mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-800 mb-3 md:mb-4">
               Partner Banks & Financial Institutions
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
+            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed px-2">
               We collaborate with specialized banks and financial institutions to offer tailored loan solutions
             </p>
           </motion.div>
@@ -986,7 +986,7 @@ const Home = () => {
             >
               {/* Section Title */}
               <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10 flex items-center justify-center gap-3">
-                <FaHome className="text-blue-600 text-3xl" />
+                <FaHome className="text-emerald-600 text-3xl" />
                 Home Loan Partners
               </h3>
 
@@ -1067,12 +1067,12 @@ const Home = () => {
                     className={`rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ${bank.bgColor} border-t-4 ${bank.borderColor}`}
                   >
                     {/* Bank Short Name */}
-                    <h4 className="text-xl font-bold text-center text-gray-800">
+                    <h4 className="text-xl font-bold text-center text-slate-800">
                       {bank.short}
                     </h4>
 
                     {/* Full Name */}
-                    <p className="text-xs text-center text-gray-600 mb-4">
+                    <p className="text-xs text-center text-slate-600 mb-4">
                       {bank.name}
                     </p>
 
@@ -1080,12 +1080,12 @@ const Home = () => {
                     <p className={`text-3xl font-extrabold text-center mb-1 ${bank.rateColor}`}>
                       {bank.rate}
                     </p>
-                    <p className="text-xs text-center text-gray-500 mb-3">
+                    <p className="text-xs text-center text-slate-500 mb-3">
                       Interest Rate (p.a.)
                     </p>
 
                     {/* Divider */}
-                    <div className="w-8 h-0.5 bg-gray-300 mx-auto mb-3"></div>
+                    <div className="w-8 h-0.5 bg-slate-300 mx-auto mb-3"></div>
 
                    
 
@@ -1202,7 +1202,7 @@ const Home = () => {
                       </p>
 
                       {/* Divider */}
-                      <div className="w-8 h-0.5 bg-gray-300 mx-auto mb-3"></div>
+                      <div className="w-8 h-0.5 bg-slate-300 mx-auto mb-3"></div>
 
                       {/* Loan Type Badge */}
                       <div className={`text-xs font-medium px-3 py-1.5 rounded-full inline-block ${bank.badgeColor}`}>
@@ -1225,7 +1225,7 @@ const Home = () => {
               className="mb-10 px-4"
             >
               <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6 text-center flex items-center justify-center gap-2">
-                <FaBusinessTime className="text-blue-600" />
+                <FaBusinessTime className="text-emerald-600" />
                 Business & Personal Loan Partners
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -1317,7 +1317,7 @@ const Home = () => {
                       </p>
 
                       {/* Divider */}
-                      <div className="w-8 h-0.5 bg-gray-300 mx-auto mb-3"></div>
+                      <div className="w-8 h-0.5 bg-slate-300 mx-auto mb-3"></div>
 
                       {/* Loan Type Badge */}
                       <div className={`text-xs font-medium px-3 py-1.5 rounded-full inline-block ${bank.badgeColor}`}>
@@ -1430,7 +1430,7 @@ const Home = () => {
                       </p>
 
                       {/* Divider */}
-                      <div className="w-8 h-0.5 bg-gray-300 mx-auto mb-3"></div>
+                      <div className="w-8 h-0.5 bg-slate-300 mx-auto mb-3"></div>
 
                       {/* Loan Type Badge */}
                       <div className={`text-xs font-medium px-3 py-1.5 rounded-full inline-block ${bank.badgeColor}`}>
@@ -1452,13 +1452,13 @@ const Home = () => {
             viewport={{ once: true }}
             className="mt-12 max-w-6xl mx-auto"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-blue-600 rounded-2xl p-6 md:p-8 text-white">
+            <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 md:p-8 text-white">
               <h3 className="text-xl md:text-2xl font-bold mb-6 text-center">
                 Comprehensive Loan Partnership Network
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 {[
-                  { count: "25+", label: "Home Loan Partners", icon: FaHome, color: "bg-orange-500" },
+                  { count: "25+", label: "Home Loan Partners", icon: FaHome, color: "bg-amber-500" },
                   { count: "18+", label: "Education Loan Partners", icon: FaGraduationCap, color: "bg-green-500" },
                   { count: "15+", label: "Business Loan Partners", icon: FaBusinessTime, color: "bg-purple-500" },
                   { count: "12+", label: "Medical Loan Partners", icon: FaHospital, color: "bg-red-500" }
@@ -1472,12 +1472,12 @@ const Home = () => {
                         </div>
                       </div>
                       <div className="text-2xl md:text-3xl font-bold mb-1">{stat.count}</div>
-                      <div className="text-sm md:text-base text-blue-100">{stat.label}</div>
+                      <div className="text-sm md:text-base text-slate-200">{stat.label}</div>
                     </div>
                   );
                 })}
               </div>
-              <p className="text-center text-blue-200 mt-6 text-sm md:text-base">
+              <p className="text-center text-slate-200 mt-6 text-sm md:text-base">
                 Access to 70+ specialized banks & financial institutions across all loan categories
               </p>
             </div>
@@ -1488,7 +1488,7 @@ const Home = () => {
       {/* Contact Information */}
 
       {/* Final CTA Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-orange-600 to-orange-500 text-white">
+      <section className="py-12 md:py-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1499,19 +1499,19 @@ const Home = () => {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
               Ready to Achieve Your Financial Goals?
             </h2>
-            <p className="text-lg md:text-xl text-blue-200 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
+            <p className="text-lg md:text-xl text-slate-200 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
               Apply for a loan today and take the first step towards realizing your dreams with DK Micro Finance.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Link
                 to="/apply"
-                className="bg-blue-700 hover:bg-blue-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
+                className="bg-white hover:bg-slate-100 text-emerald-700 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
               >
                 Apply for Loan
               </Link>
               <Link
                 to="/contact"
-                className="border border-white text-white hover:bg-white hover:text-blue-700 px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold transition-all duration-300 text-sm md:text-base"
+                className="border-2 border-white text-white hover:bg-white hover:text-slate-800 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold transition-all duration-300 text-sm md:text-base"
               >
                 Talk to Expert
               </Link>

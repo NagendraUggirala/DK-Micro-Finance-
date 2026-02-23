@@ -151,7 +151,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gradient-to-b from-blue-700 to-blue-800 text-white">
+      <footer className="bg-gradient-to-b from-slate-800 to-slate-900 text-slate-100">
         <div className="container mx-auto px-6">
           
           {/* Main Footer Content */}
@@ -175,23 +175,23 @@ const Footer = () => {
                  <div className="flex flex-col">
   <h2 className="text-xl md:text-2xl font-bold">
    <span className="text-orange-400">DK</span>
-<span className="text-blue-400"> Micro Finance</span>
+<span className="text-cyan-400"> Micro Finance</span>
 
   </h2>
- <p className="text-gray-300 italic">"We Understand Your World"</p>
+ <p className="text-slate-300 italic">"We Understand Your World"</p>
 </div>
                 </div>
 
                 <div className="text-left">
-                  <p className="text-gray-300 mb-3 text-sm leading-relaxed">
+                  <p className="text-slate-300 mb-3 text-sm leading-relaxed">
                     Your trusted financial partner providing accessible and affordable loan solutions since 2010.
                   </p>
-                  <p className="text-gray-300 mb-3 text-sm leading-relaxed">
+                  <p className="text-slate-300 mb-3 text-sm leading-relaxed">
                     We specialize in home loans, education loans, business loans, and medical loans with transparent terms and competitive rates.
                   </p>
                   <div className="mt-4">
                     <p className="text-orange-400 text-sm font-semibold mb-2">Partner Banks:</p>
-                    <p className="text-gray-300 text-xs">
+                    <p className="text-slate-300 text-xs">
                       HDFC Bank • ICICI Bank • SBI • Axis Bank • Kotak Mahindra • PNB
                     </p>
                   </div>
@@ -206,7 +206,7 @@ const Footer = () => {
                     <Link
                       key={index}
                       to={link.path}
-                      className="block text-gray-300 py-1 text-sm hover:text-orange-400 transition-all duration-200"
+                      className="block text-slate-300 py-1 text-sm hover:text-orange-400 transition-all duration-200"
                     >
                       {link.label}
                     </Link>
@@ -223,7 +223,7 @@ const Footer = () => {
                       <svg className="w-4 h-4 text-orange-400 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
                       </svg>
-                      <span className="text-gray-300 text-left">
+                      <span className="text-slate-300 text-left">
                          DK Micro Finance Private Limited,<br />
 2nd Floor, Bloossom Heights,<br />
 Patrika Nagar, Hitech City,<br/>
@@ -244,14 +244,14 @@ Telangana - 500081, India
                       <svg className="w-4 h-4 text-orange-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                       </svg>
-                      <span className="text-gray-300">+91  99667 11883</span>
+                      <span className="text-slate-300">+91  99667 11883</span>
                     </div>
 
                     <div className="flex items-center space-x-2">
                       <svg className="w-4 h-4 text-orange-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                       </svg>
-                      <span className="text-gray-300">dkmicrofinancepvtltd@gmail.com</span>
+                      <span className="text-slate-300">dkmicrofinancepvtltd@gmail.com</span>
                     </div>
                   </div>
                 </div>
@@ -262,15 +262,15 @@ Telangana - 500081, India
                 <h3 className="text-lg font-semibold mb-3 text-orange-400">Business Hours</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Monday - Saturday</span>
+                    <span className="text-slate-300">Monday - Saturday</span>
                     <span className="text-orange-400">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Sunday</span>
+                    <span className="text-slate-300">Sunday</span>
                     <span className="text-orange-400">Closed</span>
                   </div>
                   <div className="mt-4 pt-3 border-t border-white/10">
-                    <p className="text-blue-200 text-xs">
+                    <p className="text-slate-300 text-xs">
                       <span className="font-semibold">24/7 Online Application:</span><br/>
                       Apply for loans anytime, anywhere
                     </p>
@@ -286,10 +286,10 @@ Telangana - 500081, India
     
     {/* Copyright */}
     <div className="text-center md:text-left">
-      <p className="text-white text-sm"> {/* Pure white */}
+      <p className="text-slate-100 text-sm">
         © {currentYear} <span className="text-orange-400 font-semibold">DK Micro Finance Private Limited</span>. All rights reserved.
       </p>
-      <p className="text-gray-200 text-xs mt-1"> {/* Light gray */}
+      <p className="text-slate-400 text-xs mt-1">
         Registered with RBI | NBFC License No: 123456
       </p>
     </div>
@@ -300,7 +300,7 @@ Telangana - 500081, India
         <button
           key={item}
           onClick={() => openLegalModal(item)}
-          className="text-white hover:text-orange-400 transition-colors text-sm font-medium hover:underline" /* Pure white */
+          className="text-slate-100 hover:text-orange-400 transition-colors text-sm font-medium hover:underline"
         >
           {item}
         </button>

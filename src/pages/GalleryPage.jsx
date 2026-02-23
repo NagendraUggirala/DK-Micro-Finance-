@@ -203,7 +203,7 @@ const GalleryPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-slate-800 via-emerald-700 to-teal-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
@@ -221,10 +221,10 @@ const GalleryPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
               ANAND YOUTH – GALLERY
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-6 md:mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-200 mb-6 md:mb-8 leading-relaxed">
               Moments of Service, Compassion & Community Impact
             </p>
-            <p className="text-lg md:text-xl text-blue-50 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
               These photographs capture the spirit of Anand Youth — the smiles we share, the hands we support, 
               and the lives we touch. Every moment reflects our commitment to serve humanity and protect the 
               world around us.
@@ -234,7 +234,7 @@ const GalleryPage = () => {
       </section>
 
       {/* Gallery Description */}
-      <section className="py-8 md:py-12 bg-gray-50">
+      <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -255,7 +255,7 @@ const GalleryPage = () => {
       </section>
 
       {/* Category Filters */}
-      <section className="py-8 md:py-12 bg-white border-b border-gray-200">
+      <section className="py-8 md:py-12 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-5xl mx-auto">
             {categories.map((category) => {
@@ -266,8 +266,8 @@ const GalleryPage = () => {
                   onClick={() => setActiveFilter(category.id)}
                   className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold text-sm md:text-base transition-all duration-300 flex items-center space-x-2 ${
                     activeFilter === category.id
-                      ? 'bg-blue-600 text-white shadow-lg transform scale-105'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-emerald-600 text-white shadow-lg transform scale-105'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                   }`}
                 >
                   {CategoryIcon && <CategoryIcon className="text-lg" />}
@@ -280,7 +280,7 @@ const GalleryPage = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-8 md:py-12 bg-gray-50">
+      <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
           <AnimatePresence mode="wait">
             <motion.div
@@ -431,7 +431,7 @@ const GalleryPage = () => {
       </AnimatePresence>
 
       {/* Call to Action Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-600 to-green-600 text-white">
+      <section className="py-12 md:py-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -448,7 +448,7 @@ const GalleryPage = () => {
             </p>
             <Link
               to="/volunteer"
-              className="inline-flex items-center bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 md:px-10 md:py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="inline-flex items-center bg-white text-emerald-700 hover:bg-slate-50 px-8 py-3 md:px-10 md:py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               <FaHandshake className="mr-2" />
               Join Us

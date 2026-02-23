@@ -96,14 +96,14 @@ const JoinUsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50">
       {/* Back Button */}
       <div className="container mx-auto px-4 pt-6">
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => navigate(-1)}
-          className="flex items-center space-x-2 text-blue-700 hover:text-blue-700 font-semibold transition-colors duration-200 mb-4"
+          className="flex items-center space-x-2 text-emerald-700 hover:text-emerald-600 font-semibold transition-colors duration-200 mb-4"
         >
           <FaArrowLeft className="text-lg" />
           <span>Back</span>
@@ -140,7 +140,7 @@ const JoinUsPage = () => {
                       onChange={handleChange}
                       className={`w-full pl-10 pr-4 py-3 bg-gray-50 border ${
                         errors.name ? 'border-red-400' : 'border-gray-300'
-                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all`}
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -163,7 +163,7 @@ const JoinUsPage = () => {
                         onChange={handleChange}
                         className={`w-full pl-10 pr-4 py-3 bg-gray-50 border ${
                           errors.phone ? 'border-red-400' : 'border-gray-300'
-                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all`}
                         placeholder="+91 98765 43210"
                       />
                     </div>
@@ -184,7 +184,7 @@ const JoinUsPage = () => {
                         onChange={handleChange}
                         className={`w-full pl-10 pr-4 py-3 bg-gray-50 border ${
                           errors.email ? 'border-red-400' : 'border-gray-300'
-                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+                        } rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all`}
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -207,7 +207,7 @@ const JoinUsPage = () => {
                       onChange={handleChange}
                       className={`w-full pl-10 pr-4 py-3 bg-gray-50 border ${
                         errors.city ? 'border-red-400' : 'border-gray-300'
-                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all`}
                       placeholder="City, State"
                     />
                   </div>
@@ -225,8 +225,8 @@ const JoinUsPage = () => {
                         key={interest}
                         className={`flex items-center p-3 rounded-lg border-2 cursor-pointer transition-all ${
                           formData.interest === interest
-                            ? 'border-blue-500 bg-blue-50'
-                            : 'border-gray-200 bg-gray-50 hover:border-blue-300'
+                            ? 'border-emerald-500 bg-emerald-50'
+                            : 'border-slate-200 bg-slate-50 hover:border-emerald-300'
                         }`}
                       >
                         <input
@@ -235,7 +235,7 @@ const JoinUsPage = () => {
                           value={interest}
                           checked={formData.interest === interest}
                           onChange={handleChange}
-                          className="mr-2 w-4 h-4 text-blue-600 focus:ring-blue-500"
+                          className="mr-2 w-4 h-4 text-emerald-600 focus:ring-emerald-500"
                         />
                         <span className="text-sm text-gray-700">{interest}</span>
                       </label>
@@ -258,7 +258,7 @@ const JoinUsPage = () => {
                       onChange={handleChange}
                       className={`w-full pl-10 pr-4 py-3 bg-gray-50 border ${
                         errors.availability ? 'border-red-400' : 'border-gray-300'
-                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all`}
                     >
                       <option value="">Select availability</option>
                       {availabilityOptions.map((option) => (
@@ -291,7 +291,7 @@ const JoinUsPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {isSubmitting ? (
                     'Submitting...'
@@ -309,7 +309,7 @@ const JoinUsPage = () => {
       </section>
 
       {/* Inspiring Line Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-600 to-green-600 text-white">
+      <section className="py-12 md:py-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -321,7 +321,7 @@ const JoinUsPage = () => {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 italic">
               "When youth unite with purpose, humanity grows stronger."
             </h2>
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-200 leading-relaxed">
               Join us in creating a better tomorrow through compassion, service, and unity.
             </p>
           </motion.div>

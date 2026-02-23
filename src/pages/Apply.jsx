@@ -139,13 +139,13 @@ const ApplyLoans = () => {
   return (
     <>
       {/* Banner Section - Top lo */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <div className="bg-gradient-to-r from-slate-800 to-emerald-700 text-white">
         <div className="container mx-auto px-4 py-8 md:py-12">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
               Apply for a Loan
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-4 md:mb-6">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-200 mb-4 md:mb-6">
               Get instant approval on your loan application. Choose from our wide range of loan products with competitive interest rates.
             </p>
             <div className="flex flex-wrap justify-center gap-2 md:gap-4">
@@ -164,7 +164,7 @@ const ApplyLoans = () => {
       </div>
 
       {/* Main Content */}
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white pt-4 md:pt-8">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-4 md:pt-8">
         <div className="container mx-auto px-4 py-4 md:py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Left Column - Loan Types */}
@@ -178,8 +178,8 @@ const ApplyLoans = () => {
                       key={loan.id}
                       className={`p-3 md:p-4 rounded-lg md:rounded-xl border-2 cursor-pointer transition-all duration-300 ${
                         formData.loanType === loan.id
-                          ? "border-orange-500 bg-orange-50"
-                          : "border-gray-200 hover:border-blue-300"
+                          ? "border-emerald-500 bg-emerald-50"
+                          : "border-slate-200 hover:border-emerald-300"
                       }`}
                       onClick={() => {
                         setFormData(prev => ({ ...prev, loanType: loan.id }));
@@ -192,7 +192,7 @@ const ApplyLoans = () => {
                       </div>
                       <p className="text-xs md:text-sm text-gray-600 line-clamp-2">{loan.description}</p>
                       <div className="mt-2 md:mt-3">
-                        <span className="text-xs md:text-sm font-semibold text-blue-700">
+                        <span className="text-xs md:text-sm font-semibold text-emerald-700">
                           Rate: {interestRates[loan.id]}
                         </span>
                       </div>
@@ -208,7 +208,7 @@ const ApplyLoans = () => {
                   <select
                     value={activeTab}
                     onChange={(e) => setActiveTab(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
                   >
                     <option value="personal">👤 Personal Information</option>
                     <option value="loan">💰 Loan Details</option>
@@ -229,8 +229,8 @@ const ApplyLoans = () => {
                       key={tab.id}
                       className={`pb-2 md:pb-3 px-3 md:px-4 font-medium text-sm md:text-base flex items-center space-x-1 md:space-x-2 whitespace-nowrap ${
                         activeTab === tab.id
-                          ? "text-orange-500 border-b-2 border-orange-500"
-                          : "text-gray-500 hover:text-gray-700"
+                          ? "text-emerald-600 border-b-2 border-emerald-600"
+                          : "text-slate-500 hover:text-slate-700"
                       }`}
                       onClick={() => setActiveTab(tab.id)}
                     >
@@ -244,59 +244,59 @@ const ApplyLoans = () => {
                   {/* Personal Information Tab */}
                   {activeTab === "personal" && (
                     <div className="space-y-4 md:space-y-6">
-                      <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">
+                      <h3 className="text-lg md:text-xl font-semibold text-emerald-800 mb-3 md:mb-4">
                         <span className="mr-2">👤</span> Personal Information
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Full Name *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Full Name *</label>
                           <input
                             type="text"
                             name="fullName"
                             value={formData.fullName}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter your full name"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Email Address *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Email Address *</label>
                           <input
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter your email"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Phone Number *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Phone Number *</label>
                           <input
                             type="tel"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="+91 98765 43210"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Date of Birth *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Date of Birth *</label>
                           <input
                             type="date"
                             name="dateOfBirth"
                             value={formData.dateOfBirth}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">PAN Number *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">PAN Number *</label>
                           <input
                             type="text"
                             name="panNumber"
@@ -309,13 +309,13 @@ const ApplyLoans = () => {
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Aadhar Number *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Aadhar Number *</label>
                           <input
                             type="text"
                             name="aadharNumber"
                             value={formData.aadharNumber}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="1234 5678 9012"
                             required
                             maxLength="12"
@@ -328,18 +328,18 @@ const ApplyLoans = () => {
                   {/* Loan Details Tab */}
                   {activeTab === "loan" && (
                     <div className="space-y-4 md:space-y-6">
-                      <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">
+                      <h3 className="text-lg md:text-xl font-semibold text-emerald-800 mb-3 md:mb-4">
                         <span className="mr-2">💰</span> Loan Details
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Loan Amount (₹) *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Loan Amount (₹) *</label>
                           <input
                             type="number"
                             name="loanAmount"
                             value={formData.loanAmount}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter amount"
                             required
                             min="10000"
@@ -348,12 +348,12 @@ const ApplyLoans = () => {
                           <p className="text-xs md:text-sm text-gray-500 mt-1">Range: ₹10,000 - ₹50,00,000</p>
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Loan Tenure (Months) *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Loan Tenure (Months) *</label>
                           <select
                             name="loanTenure"
                             value={formData.loanTenure}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             required
                           >
                             <option value="12">12 Months (1 Year)</option>
@@ -365,13 +365,13 @@ const ApplyLoans = () => {
                           </select>
                         </div>
                         <div className="sm:col-span-2">
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Purpose of Loan *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Purpose of Loan *</label>
                           <textarea
                             name="purpose"
                             value={formData.purpose}
                             onChange={handleChange}
                             rows="3"
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             required
                             placeholder="Briefly describe the purpose of the loan..."
                           ></textarea>
@@ -383,17 +383,17 @@ const ApplyLoans = () => {
                   {/* Employment Tab */}
                   {activeTab === "employment" && (
                     <div className="space-y-4 md:space-y-6">
-                      <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">
+                      <h3 className="text-lg md:text-xl font-semibold text-emerald-800 mb-3 md:mb-4">
                         <span className="mr-2">💼</span> Employment Details
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Employment Type *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Employment Type *</label>
                           <select
                             name="employmentType"
                             value={formData.employmentType}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             required
                           >
                             <option value="salaried">Salaried Employee</option>
@@ -403,37 +403,37 @@ const ApplyLoans = () => {
                           </select>
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Company/Business Name</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Company/Business Name</label>
                           <input
                             type="text"
                             name="companyName"
                             value={formData.companyName}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter company name"
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Monthly Income (₹) *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Monthly Income (₹) *</label>
                           <input
                             type="number"
                             name="monthlyIncome"
                             value={formData.monthlyIncome}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter monthly income"
                             required
                             min="10000"
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Work Experience (Years) *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Work Experience (Years) *</label>
                           <input
                             type="number"
                             name="workExperience"
                             value={formData.workExperience}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter years of experience"
                             required
                             min="0"
@@ -448,54 +448,54 @@ const ApplyLoans = () => {
                   {/* Address Tab */}
                   {activeTab === "address" && (
                     <div className="space-y-4 md:space-y-6">
-                      <h3 className="text-lg md:text-xl font-semibold text-blue-700 mb-3 md:mb-4">
+                      <h3 className="text-lg md:text-xl font-semibold text-emerald-800 mb-3 md:mb-4">
                         <span className="mr-2">📍</span> Address Details
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div className="sm:col-span-2">
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Complete Address *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Complete Address *</label>
                           <textarea
                             name="address"
                             value={formData.address}
                             onChange={handleChange}
                             rows="3"
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             required
                             placeholder="House no, Street, Area/Locality..."
                           ></textarea>
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">City *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">City *</label>
                           <input
                             type="text"
                             name="city"
                             value={formData.city}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter city"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">State *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">State *</label>
                           <input
                             type="text"
                             name="state"
                             value={formData.state}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter state"
                             required
                           />
                         </div>
                         <div>
-                          <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Pincode *</label>
+                          <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Pincode *</label>
                           <input
                             type="text"
                             name="pincode"
                             value={formData.pincode}
                             onChange={handleChange}
-                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                             placeholder="Enter pincode"
                             required
                             maxLength="6"
@@ -534,7 +534,7 @@ const ApplyLoans = () => {
                           const currentIndex = tabs.indexOf(activeTab);
                           if (currentIndex < tabs.length - 1) setActiveTab(tabs[currentIndex + 1]);
                         }}
-                        className="w-full sm:w-auto px-6 md:px-8 py-2 md:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold text-sm md:text-base order-1 sm:order-2"
+                        className="w-full sm:w-auto px-6 md:px-8 py-2 md:py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 font-semibold text-sm md:text-base order-1 sm:order-2"
                       >
                         Next →
                       </button>
@@ -548,10 +548,10 @@ const ApplyLoans = () => {
             <div className="space-y-4 md:space-y-6 lg:space-y-8">
               {/* EMI Calculator */}
               <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold text-blue-700 mb-3 md:mb-4">EMI Calculator</h3>
+                <h3 className="text-lg md:text-xl font-bold text-emerald-800 mb-3 md:mb-4">EMI Calculator</h3>
                 <div className="space-y-3 md:space-y-4">
                   <div>
-                    <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Loan Amount</label>
+                    <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Loan Amount</label>
                     <div className="flex items-center">
                       <span className="bg-gray-100 px-2 md:px-3 py-1 md:py-2 rounded-l-lg border border-r-0 text-sm md:text-base">₹</span>
                       <input
@@ -565,7 +565,7 @@ const ApplyLoans = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Tenure (Months)</label>
+                    <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Tenure (Months)</label>
                     <input
                       type="range"
                       min="12"
@@ -582,9 +582,9 @@ const ApplyLoans = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm md:text-base text-gray-700 mb-1 md:mb-2">Interest Rate</label>
+                    <label className="block text-sm md:text-base text-slate-700 mb-1 md:mb-2">Interest Rate</label>
                     <div className="text-center p-2 md:p-3 bg-blue-50 rounded-lg">
-                      <span className="text-lg md:text-2xl font-bold text-blue-700">
+                      <span className="text-lg md:text-2xl font-bold text-emerald-700">
                         {interestRates[formData.loanType]}
                       </span>
                       <p className="text-xs md:text-sm text-gray-600 mt-1">per annum</p>
@@ -604,7 +604,7 @@ const ApplyLoans = () => {
 
               {/* Required Documents */}
               <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold text-blue-700 mb-3 md:mb-4">Required Documents</h3>
+                <h3 className="text-lg md:text-xl font-bold text-emerald-800 mb-3 md:mb-4">Required Documents</h3>
                 <ul className="space-y-2 md:space-y-3">
                   {[
                     "PAN Card",
@@ -618,14 +618,14 @@ const ApplyLoans = () => {
                       <div className="w-5 h-5 md:w-6 md:h-6 bg-green-100 rounded-full flex items-center justify-center mr-2 md:mr-3 flex-shrink-0">
                         <span className="text-green-600 text-xs md:text-sm">✓</span>
                       </div>
-                      <span className="text-gray-700">{item}</span>
+                      <span className="text-slate-700">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Benefits */}
-              <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 text-white">
+              <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl shadow-lg p-4 md:p-6 text-white">
                 <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Why Choose Us?</h3>
                 <ul className="space-y-2 md:space-y-3">
                   <li className="flex items-center text-sm md:text-base">
@@ -655,19 +655,19 @@ const ApplyLoans = () => {
 
           {/* Call to Action - Responsive */}
           <div className="mt-8 md:mt-12">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl md:rounded-2xl p-4 md:p-8 text-white">
+            <div className="bg-gradient-to-r from-slate-800 to-emerald-700 rounded-2xl p-4 md:p-8 text-white">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3">Need Help with Your Application?</h3>
               <p className="text-sm md:text-base mb-4 md:mb-6 opacity-90">Our loan experts are available 24/7 to assist you</p>
               <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6">
                 <a 
                   href="tel:+91040-29331883" 
-                  className="px-4 md:px-6 py-2 md:py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 text-sm md:text-base text-center"
+                  className="px-4 md:px-6 py-2 md:py-3 bg-white text-emerald-700 rounded-xl font-semibold hover:bg-slate-100 text-sm md:text-base text-center"
                 >
                   📞 Call Now: 040-29331883
                 </a>
                 <Link 
                   to="/contact" 
-                  className="px-4 md:px-6 py-2 md:py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 text-sm md:text-base text-center"
+                  className="px-4 md:px-6 py-2 md:py-3 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-slate-800 text-sm md:text-base text-center"
                 >
                   📝 Contact Us
                 </Link>
@@ -693,9 +693,9 @@ const ApplyLoans = () => {
                 Your loan application has been received successfully.
               </p>
               
-              <div className="bg-blue-50 rounded-lg p-3 md:p-4 mb-4 md:mb-6">
+              <div className="bg-emerald-50 rounded-xl p-3 md:p-4 mb-4 md:mb-6">
                 <p className="text-xs md:text-sm text-gray-600">Application ID</p>
-                <p className="text-lg md:text-xl font-bold text-blue-700">{applicationId}</p>
+                <p className="text-lg md:text-xl font-bold text-emerald-700">{applicationId}</p>
                 <p className="text-xs md:text-sm text-gray-500 mt-2">
                   Save this ID for future reference
                 </p>
@@ -708,19 +708,19 @@ const ApplyLoans = () => {
               <div className="flex flex-col space-y-2 md:space-y-3">
                 <button
                   onClick={handleContinueBrowsing}
-                  className="w-full px-4 md:px-6 py-2 md:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold text-sm md:text-base"
+                  className="w-full px-4 md:px-6 py-2 md:py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 font-semibold text-sm md:text-base"
                 >
                   Continue Browsing
                 </button>
                 <button
                   onClick={handleApplyNewLoan}
-                  className="w-full px-4 md:px-6 py-2 md:py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-50 font-semibold text-sm md:text-base"
+                  className="w-full px-4 md:px-6 py-2 md:py-3 border-2 border-emerald-600 text-emerald-600 rounded-xl hover:bg-emerald-50 font-semibold text-sm md:text-base"
                 >
                   Apply for Another Loan
                 </button>
                 <Link
                   to="/"
-                  className="w-full px-4 md:px-6 py-2 md:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold text-sm md:text-base text-center"
+                  className="w-full px-4 md:px-6 py-2 md:py-3 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 font-semibold text-sm md:text-base text-center"
                 >
                   Go to Homepage
                 </Link>

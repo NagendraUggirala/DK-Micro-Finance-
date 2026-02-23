@@ -47,30 +47,30 @@ const About = () => {
       title: "Home Loans",
       description: "Complete financing solutions for buying, building, or renovating your dream home",
       stats: "₹250+ Cr Disbursed",
-      color: "from-blue-500 to-blue-600"
+      color: "from-violet-500 to-indigo-600"
     },
     {
       title: "Education Loans",
       description: "Supporting academic dreams from school fees to higher education abroad",
       stats: "5000+ Students Funded",
-      color: "from-green-500 to-green-600"
+      color: "from-indigo-500 to-violet-600"
     },
     {
       title: "Business Loans",
       description: "Fueling entrepreneurship with working capital and expansion financing",
       stats: "1000+ Businesses Supported",
-      color: "from-purple-500 to-purple-600"
+      color: "from-amber-500 to-orange-600"
     },
     {
       title: "Medical Loans",
       description: "Healthcare financing for treatments, equipment, and hospital setups",
       stats: "200+ Medical Facilities",
-      color: "from-red-500 to-red-600"
+      color: "from-violet-600 to-purple-600"
     }
   ];
 
   // Team members data
- const teamMembers = [
+  const teamMembers = [
     {
       name: "L. Gowthami",
       position: "HR Business Partner",
@@ -85,7 +85,7 @@ const About = () => {
       department: "Operations",
       image: "/images/image.png",
       description: "Experienced team leader driving operational excellence and customer service standards.",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-indigo-500 to-violet-500"
     },
     {
       name: "B. Vani",
@@ -93,9 +93,9 @@ const About = () => {
       department: "Operations",
       image: "/images/TL.png",
       description: "Dedicated team leader ensuring smooth loan processing and client satisfaction.",
-      color: "from-emerald-500 to-teal-500"
+      color: "from-violet-500 to-amber-500"
     }
-];
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -145,175 +145,123 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      {/* Enhanced Hero Section with Company Tagline */}
-      <section className="relative py-16 md:py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -left-24 -top-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute -right-24 -bottom-20 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+    <div className="min-h-screen bg-stone-100 overflow-x-hidden">
+      {/* Hero - Left-aligned with full-width gradient */}
+      <section className="relative py-20 md:py-28 bg-gradient-to-l from-violet-900 via-indigo-900 to-slate-900 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="max-w-6xl mx-auto text-center text-white"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            className="max-w-4xl mx-auto text-left"
           >
-            {/* Main Company Tagline */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="mb-8 md:mb-10"
-            >
-              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/20 shadow-2xl mx-2">
-                {/* Company Tagline */}
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-5 leading-tight">
-                  We Understand Your World
-                </div>
-
-                {/* Transliteration */}
-                <div className="text-base sm:text-lg md:text-2xl text-blue-100 italic mb-4 md:mb-5">
-                  "Your Trusted Financial Partner"
-                </div>
-
-                {/* Separator */}
-                <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mx-auto rounded-full mb-4 md:mb-5"></div>
-
-                {/* Meaning */}
-                <div className="text-sm sm:text-base md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed px-2">
-                  Building financial bridges to help you achieve your dreams with trust, transparency, and tailored solutions.
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Main Title - Smaller Size */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-blue-100"
-            >
-              About <span className="text-orange-300">DK Micro Finance</span>
-            </motion.h1>
-
+            <div className="inline-block bg-white/5 backdrop-blur-md rounded-2xl p-6 md:p-10 border border-white/10 shadow-2xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+                About <span className="text-amber-400">DK Micro Finance</span>
+              </h1>
+              <p className="text-lg md:text-xl text-amber-200/90 italic mb-4">
+                "We Understand Your World"
+              </p>
+              <div className="w-24 h-1 bg-amber-400 rounded-full mb-2"></div>
+              <p className="text-slate-300 text-base md:text-lg max-w-2xl leading-relaxed">
+                Building financial bridges to help you achieve your dreams with trust, transparency, and tailored solutions.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Founder/Leadership Section - Enhanced for Mobile */}
-      <section className="py-12 md:py-20 bg-white">
+      {/* Leadership - Content LEFT, Image RIGHT, zigzag layout */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
 
-              {/* Left: Image card with responsive sizing */}
+              {/* Content FIRST (left on desktop) */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex justify-center w-full lg:justify-start order-2 lg:order-1"
+                className="flex-1 order-2 lg:order-1"
               >
-                <div className="relative group w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
-                  {/* Responsive Image card */}
-                  <div className="w-full h-[350px] sm:h-[400px] md:h-[500px] lg:h-[580px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-100 bg-white transform transition-all duration-500 group-hover:shadow-3xl group-hover:scale-[1.02] group-hover:ring-2 group-hover:ring-blue-200">
-                    <img
-                      src="./images/CEO.png"
-                      alt="Leadership Team"
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    />
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 text-left">Our Leadership</h2>
+                <p className="text-base text-violet-600 font-semibold mt-2 text-left">Expert Financial Guidance</p>
 
-                    {/* Shine effect on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <div className="mt-6 text-slate-700 space-y-4">
+                  <p className="text-sm sm:text-base leading-relaxed">
+                    Led by a team of experienced financial professionals with decades of combined expertise,
+                    DK Micro Finance has established itself as a trusted name in the financial services industry.
+                  </p>
+                  <p className="text-sm sm:text-base leading-relaxed">
+                    DK Micro Finance has grown into a trusted financial institution dedicated to serving
+                    customers with compassion, responsibility, and integrity.
+                  </p>
 
-                    {/* Founder & Chairman Badge - On Image */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.5 }}
-                      viewport={{ once: true }}
-                      className="absolute left-4 md:left-6 bottom-4 md:bottom-6 transform group-hover:scale-110 transition-transform duration-300"
-                    >
-                      <div className="bg-white/95 backdrop-blur-sm px-3 md:px-4 py-1 md:py-2 rounded-full shadow-lg text-xs md:text-sm font-semibold text-gray-700 border border-gray-100 group-hover:border-blue-200 group-hover:shadow-xl transition-all duration-300">
-                        <div className="text-xs text-gray-500 group-hover:text-blue-500 transition-colors">Leadership Team</div>
-                        <div className="uppercase text-xs tracking-wide group-hover:text-blue-600 transition-colors">DK MICRO FINANCE</div>
-                      </div>
-                    </motion.div>
+                  <div className="bg-violet-50 rounded-2xl p-5 md:p-6 mt-6 border border-violet-100">
+                    <h4 className="font-bold text-violet-800 text-base md:text-lg mb-2">About DK Micro Finance</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      With over 12 years of expertise, we specialize in sustainable, transparent financial solutions
+                      that ensure complete legal compliance and deliver exceptional value.
+                    </p>
                   </div>
-
-                  {/* Quote Section Under Image */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                    viewport={{ once: true }}
-                    className="mt-6 group"
-                  >
-                    <div className="bg-gradient-to-r from-blue-50/50 to-cyan-50/50 rounded-xl p-4 md:p-6 border-l-4 border-blue-500 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-blue-600 mx-2 sm:mx-0">
-                      <p className="text-gray-700 italic text-sm sm:text-base md:text-lg leading-relaxed text-center">
-                        We transform financial aspirations into realities. Every loan we provide is guided by responsibility, 
-                        transparency, and a vision for sustainable financial growth. DK Micro Finance's efforts are not just financial transactions
-                        they are foundations of hope, dignity, and positive change for generations to come.
-                      </p>
-                    </div>
-                  </motion.div>
                 </div>
+
+                {/* Team Stats */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isTeamInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="mt-12 text-center"
+                >
+                  <div className="inline-flex flex-wrap justify-center gap-4 md:gap-8 bg-white rounded-2xl px-6 md:px-10 py-4 shadow-lg border border-violet-100">
+                    <div className="text-center">
+                      <div className="text-xl md:text-2xl font-bold text-violet-700">50+</div>
+                      <div className="text-xs text-slate-500">Team Members</div>
+                    </div>
+                    <div className="w-px h-8 bg-slate-300 hidden sm:block"></div>
+                    <div className="text-center">
+                      <div className="text-xl md:text-2xl font-bold text-indigo-700">10+</div>
+                      <div className="text-xs text-slate-500">Years Combined</div>
+                    </div>
+                    <div className="w-px h-8 bg-slate-300 hidden sm:block"></div>
+                    <div className="text-center">
+                      <div className="text-xl md:text-2xl font-bold text-amber-600">24/7</div>
+                      <div className="text-xs text-slate-500">Support</div>
+                    </div>
+                  </div>
+                </motion.div>
+               
               </motion.div>
 
-              {/* Right: Content with improved mobile alignment */}
+              {/* Image SECOND (right on desktop) */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.15 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="space-y-6 md:space-y-8 order-1 lg:order-2 w-full"
+                className="flex-1 order-1 lg:order-2 flex justify-center lg:justify-end"
               >
-                <div className="w-full">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 text-center lg:text-left">Our Leadership</h2>
-                  <p className="text-base sm:text-lg md:text-xl text-blue-600 font-semibold mt-1 text-center lg:text-left">Expert Financial Guidance</p>
-
-                  <div className="mt-4 md:mt-6 text-gray-700 space-y-4 w-full">
-                    <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-                      Led by a team of experienced financial professionals with decades of combined expertise,
-                      DK Micro Finance has established itself as a trusted name in the financial services industry.
-                    </p>
-                    <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-                      DK Micro Finance has grown into a trusted financial institution dedicated to serving 
-                      customers with compassion, responsibility, and integrity. Rooted in ethical lending practices, 
-                      we focus on empowering individuals and businesses to create meaningful financial impact.
-                    </p>
-
-                    {/* Added DK Micro Finance Information */}
-                    <div className="bg-blue-50 rounded-lg p-4 md:p-6 mt-4 border-l-4 border-blue-500">
-                      <h4 className="font-bold text-blue-700 text-base sm:text-lg md:text-xl mb-2">About DK Micro Finance</h4>
-                      <p className="text-gray-700 text-xs sm:text-sm md:text-base">
-                        Under expert leadership, DK Micro Finance has emerged as a trusted name in financial services,
-                        transforming financial aspirations into achievable goals. With over 12 years of expertise,
-                        we specialize in creating sustainable, transparent financial solutions that ensure complete 
-                        legal compliance and deliver exceptional value.
-                      </p>
+                <div className="relative group w-full max-w-md">
+                  <div className="rounded-3xl overflow-hidden shadow-2xl ring-2 ring-violet-100 group-hover:ring-violet-300 transition-all duration-500">
+                    <img
+                      src="./images/CEO.png"
+                      alt="Leadership Team"
+                      className="w-full h-[380px] md:h-[480px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                      <div className="text-white text-sm font-semibold">Leadership Team</div>
+                      <div className="text-amber-300 text-xs uppercase tracking-wider">DK Micro Finance</div>
                     </div>
                   </div>
 
-                  {/* Stats Section on Right Side Below Content */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.9 }}
-                    viewport={{ once: true }}
-                    className="mt-8 w-full"
-                  >
-                    <div className="grid grid-cols-2 gap-3 md:gap-4 w-full max-w-md mx-auto lg:mx-0">
-                      <EnhancedStatCard title="50,000+" subtitle="Customers" delay={0} />
-                      <EnhancedStatCard title="₹500+ Cr" subtitle="Loans Disbursed" delay={0.1} />
-                      <EnhancedStatCard title="12+" subtitle="Years" delay={0.2} />
-                      <EnhancedStatCard title="98%" subtitle="Satisfaction" delay={0.3} />
-                    </div>
-                  </motion.div>
+                  {/* Quote - positioned below image, left-aligned */}
+
                 </div>
               </motion.div>
             </div>
@@ -321,21 +269,19 @@ const About = () => {
         </div>
       </section>
 
-      {/* NEW SECTION: Our Team */}
-      <section ref={teamRef} className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* Our Team - Left-aligned header, asymmetric grid */}
+      <section ref={teamRef} className="py-16 md:py-24 bg-gradient-to-br from-violet-50 via-indigo-50 to-slate-50">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isTeamInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-12 md:mb-16 max-w-6xl mx-auto"
           >
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-4 md:mb-6">
-              Our <span className="text-orange-500">Dedicated Team</span>
+            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6">
+              Our <span className="text-violet-600">Dedicated Team</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
-              Meet the professionals who make DK Micro Finance a trusted name in financial services
-            </p>
+
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
@@ -347,7 +293,7 @@ const About = () => {
                 animate={isTeamInView ? "visible" : "hidden"}
                 variants={teamCardVariants}
                 whileHover={{ y: -8, scale: 1.03 }}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                className="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-violet-100 hover:border-violet-200"
               >
                 {/* Image Container */}
                 <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden">
@@ -359,30 +305,30 @@ const About = () => {
                   />
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  
+
                   {/* Name Badge on Image */}
-                 <div className="absolute bottom-2 left-2 right-2 z-20">
-  <div className="bg-white/95 backdrop-blur-sm rounded-md p-2 transform transition-transform duration-300 group-hover:translate-y-[-2px]">
-    <h3 className="text-sm font-semibold text-gray-800">
-      {member.name}
-    </h3>
-    <p className="text-xs text-blue-600 font-medium">
-      {member.position}
-    </p>
-  </div>
-</div>
+                  <div className="absolute bottom-2 left-2 right-2 z-20">
+                    <div className="bg-white/95 backdrop-blur-sm rounded-md p-2 transform transition-transform duration-300 group-hover:translate-y-[-2px]">
+                      <h3 className="text-sm font-semibold text-slate-800">
+                        {member.name}
+                      </h3>
+                      <p className="text-xs text-violet-600 font-medium">
+                        {member.position}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-5">
                   <div className="flex items-center mb-3">
                     <span className={`inline-block w-2 h-2 rounded-full bg-gradient-to-r ${member.color} mr-2`}></span>
-                    <p className="text-sm text-gray-500 font-medium">{member.department}</p>
+                    <p className="text-sm text-slate-500 font-medium">{member.department}</p>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {member.description}
                   </p>
-                  
+
                   {/* Social/Hover Effect Line */}
                   <div className={`mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r ${member.color} transition-all duration-500 rounded-full`}></div>
                 </div>
@@ -390,35 +336,12 @@ const About = () => {
             ))}
           </div>
 
-          {/* Team Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isTeamInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-12 text-center"
-          >
-            <div className="inline-flex flex-wrap justify-center gap-4 md:gap-8 bg-white rounded-full px-6 md:px-10 py-4 shadow-lg">
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-blue-700">50+</div>
-                <div className="text-xs text-gray-500">Team Members</div>
-              </div>
-              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-blue-700">10+</div>
-                <div className="text-xs text-gray-500">Years Combined</div>
-              </div>
-              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
-              <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-blue-700">24/7</div>
-                <div className="text-xs text-gray-500">Support</div>
-              </div>
-            </div>
-          </motion.div>
+
         </div>
       </section>
 
-      {/* Company Profile Section - Mobile Optimized */}
-      <section ref={ref1} className="py-12 md:py-20 bg-gray-50">
+      {/* Company Profile - Alternate left/right layout */}
+      <section ref={ref1} className="py-16 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             variants={containerVariants}
@@ -427,54 +350,38 @@ const About = () => {
             className="max-w-6xl mx-auto"
           >
             <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16">
-              <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-4 md:mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6">
                 About DK Micro Finance
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
-                Transforming financial aspirations into realities through transparent, accessible, and responsible lending.
-              </p>
+
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-stretch px-2 sm:px-0">
-              <motion.div variants={itemVariants} className="flex">
-                <div className="bg-gradient-to-br from-blue-50 to-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col h-full w-full">
-                  <div className="flex flex-col h-full justify-between">
-                    <div>
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-700 mb-4 md:mb-6 text-left">
-                        Financial Services Excellence
-                      </h3>
-                      <div className="space-y-4 text-left">
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                          <span className="font-semibold text-blue-700">
-                          DK Micro Finance specializes in comprehensive financial solutions.
-                          </span>{" "}
-                          Complete transparency, responsible lending, compassionate service, and lasting positive impact for every customer we serve.
-                        </p>
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                          Our financial products are thoughtfully designed with customer needs in mind, offering flexible terms, competitive rates, and sustainable solutions that support financial growth and deliver lasting positive impact.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+              <motion.div variants={itemVariants} className="lg:text-right">
+                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-violet-500 border border-slate-100 hover:shadow-xl hover:border-violet-300 transition-all duration-300">
+                  <h3 className="text-lg md:text-2xl font-bold text-violet-800 mb-4">
+                    Financial Services Excellence
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed mb-4">
+                    <span className="font-semibold text-slate-800">DK Micro Finance specializes in comprehensive financial solutions.</span>{" "}
+                    Complete transparency, responsible lending, compassionate service, and lasting positive impact for every customer we serve.
+                  </p>
+                  <p className="text-slate-600 leading-relaxed">
+                    Our financial products are thoughtfully designed with customer needs in mind, offering flexible terms, competitive rates, and sustainable solutions.
+                  </p>
                 </div>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="flex">
-                <div className="bg-gradient-to-br from-orange-50 to-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-orange-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300 flex flex-col h-full w-full">
-                  <div className="flex flex-col h-full justify-between">
-                    <div>
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-700 mb-4 md:mb-6 text-left">
-                        Our Journey in Financial Services
-                      </h3>
-                      <div className="space-y-4 text-left">
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                          What began as a small lending institution has grown into a trusted financial partner for thousands. 
-                          Yet, our core principles remain unchanged: serving with honesty and transparency, delivering support with uncompromised quality,
-                          and creating inclusive financial solutions that remain accessible to all sections of society.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+              <motion.div variants={itemVariants} className="lg:mt-12">
+                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-amber-500 border border-slate-100 hover:shadow-xl hover:border-amber-300 transition-all duration-300">
+                  <h3 className="text-lg md:text-2xl font-bold text-amber-800 mb-4">
+                    Our Journey in Financial Services
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    What began as a small lending institution has grown into a trusted financial partner for thousands.
+                    Our core principles remain unchanged: serving with honesty and transparency, delivering support with uncompromised quality,
+                    and creating inclusive financial solutions accessible to all sections of society.
+                  </p>
                 </div>
               </motion.div>
             </div>
@@ -482,25 +389,23 @@ const About = () => {
         </div>
       </section>
 
-      {/* Loan Sectors Section */}
-      <section className="py-12 md:py-20 bg-white">
+      {/* Loan Sectors - Left-aligned header, staggered grid */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-12 md:mb-16 max-w-6xl mx-auto"
           >
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-4 md:mb-6">
+            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6">
               Our Loan Sectors
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
-              Comprehensive financial solutions tailored for every life stage and business need
-            </p>
+
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto px-2 sm:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             {loanSectors.map((sector, index) => (
               <motion.div
                 key={index}
@@ -508,38 +413,36 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className="bg-white rounded-xl shadow-lg p-4 md:p-6 text-center group hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+                whileHover={{ y: -6, scale: 1.03 }}
+                className={`bg-white rounded-2xl shadow-lg p-5 md:p-6 text-left group hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-violet-200 ${index % 2 === 1 ? 'lg:mt-8' : ''}`}
               >
-                <div className={`h-2 rounded-t-xl bg-gradient-to-r ${sector.color} mb-4`}></div>
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-blue-700 mb-2 md:mb-3 group-hover:text-blue-600 transition-colors">{sector.title}</h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed group-hover:text-gray-700 transition-colors mb-3">{sector.description}</p>
-                <div className="text-sm font-semibold text-orange-600">{sector.stats}</div>
+                <div className={`h-1.5 w-12 rounded-full bg-gradient-to-r ${sector.color} mb-4`}></div>
+                <h3 className="text-base md:text-xl font-bold text-violet-800 mb-2 group-hover:text-violet-600 transition-colors">{sector.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-3">{sector.description}</p>
+                <div className="text-sm font-semibold text-amber-600">{sector.stats}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Values Section - Mobile Optimized */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      {/* Values - 3-column layout on large screens */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-violet-50/30">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-12 md:mb-16 max-w-6xl mx-auto"
           >
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-4 md:mb-6">
+            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6">
               Our Core Values
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
-              The principles that guide our financial services and set DK Micro Finance apart
-            </p>
+
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto px-2 sm:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             {values.map((value, index) => (
               <motion.div
                 key={index}
@@ -547,37 +450,37 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className="bg-white rounded-xl shadow-lg p-4 md:p-6 text-center group hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="bg-white rounded-2xl shadow-lg p-5 md:p-6 text-center group hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-violet-200"
               >
-                <div className="text-3xl sm:text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-4xl md:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {value.icon}
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-blue-700 mb-2 md:mb-3 group-hover:text-blue-600 transition-colors">{value.title}</h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed group-hover:text-gray-700 transition-colors">{value.description}</p>
+                <h3 className="text-base md:text-xl font-bold text-violet-800 mb-2 group-hover:text-violet-600 transition-colors">{value.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Future Vision - Mobile Optimized */}
-      <section ref={ref3} className="py-12 md:py-20 bg-white">
+      {/* Future Vision - Left-aligned */}
+      <section ref={ref3} className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView3 ? "visible" : "hidden"}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-left"
           >
             <motion.div variants={itemVariants}>
-              <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-4 md:mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6">
                 Empowering Financial Futures.
               </h2>
-              <div className="w-20 h-1 md:w-24 md:h-1 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mb-6 md:mb-8 rounded-full"></div>
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 md:mb-8 px-2 sm:px-4">
+              <div className="w-20 h-1 bg-gradient-to-r from-violet-500 to-amber-500 mb-6 md:mb-8 rounded-full"></div>
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-6 md:mb-8">
                 With expanding services in home financing, education loans, business support, and medical funding,
-                DK Micro Finance stands for responsible lending, transparent operations, and a vision to create lasting financial security, 
+                DK Micro Finance stands for responsible lending, transparent operations, and a vision to create lasting financial security,
                 meaningful opportunities, and prosperity that benefits generations to come.
               </p>
               <motion.div
@@ -586,7 +489,7 @@ const About = () => {
               >
                 <Link
                   to="/contact"
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-sm sm:text-base"
+                  className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:from-violet-700 hover:to-indigo-700 transition-all duration-300 text-sm sm:text-base"
                 >
                   Start Your Financial Journey
                 </Link>
@@ -596,31 +499,32 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA - Mobile Optimized */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
+      {/* CTA - Violet/indigo gradient */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-violet-900 via-indigo-900 to-slate-900 text-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">
               Ready to Achieve Your Financial Goals?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-blue-200 mb-6 md:mb-8 max-w-2xl mx-auto px-2 sm:px-4">
+            <p className="text-base sm:text-lg text-slate-200 mb-6 md:mb-8">
               Discover how DK Micro Finance's commitment to transparency, responsible lending, and customer-centric solutions can transform your financial future.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/apply"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
+                className="bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-3 md:px-8 md:py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base text-center"
               >
                 Apply for Loan
               </Link>
               <Link
                 to="/contact"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-700 px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm sm:text-base"
+                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 md:px-8 md:py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm sm:text-base text-center"
               >
                 Talk to Expert
               </Link>
@@ -649,16 +553,16 @@ function EnhancedStatCard({ title, subtitle, delay = 0 }) {
       }}
       className="group"
     >
-      <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-5 flex flex-col items-start justify-center ring-1 ring-gray-100 hover:ring-2 hover:ring-blue-200 hover:shadow-xl transition-all duration-300">
-        <div className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300 transform group-hover:scale-110">
+      <div className="relative bg-white rounded-2xl shadow-lg p-3 sm:p-4 md:p-5 flex flex-col items-start justify-center ring-1 ring-slate-100 hover:ring-2 hover:ring-violet-200 hover:shadow-xl transition-all duration-300">
+        <div className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 group-hover:text-violet-600 transition-colors duration-300 transform group-hover:scale-110">
           {title}
         </div>
-        <div className="text-xs text-gray-400 mt-1 group-hover:text-gray-600 transition-colors duration-300">
+        <div className="text-xs text-slate-400 mt-1 group-hover:text-slate-600 transition-colors duration-300">
           {subtitle}
         </div>
 
         {/* Hover effect background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-50/60 to-amber-50/60 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
       </div>
     </motion.div>
   );

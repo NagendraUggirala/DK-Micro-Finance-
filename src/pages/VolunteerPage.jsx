@@ -210,9 +210,9 @@ const BankPartners = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-gradient-to-r from-slate-800 to-emerald-800 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -228,9 +228,9 @@ const BankPartners = () => {
               transition={{ duration: 0.8 }}
               className="text-3xl md:text-5xl font-bold mb-4"
             >
-              Our <span className="text-orange-400">Bank Partners</span>
+              Our <span className="text-amber-400">Bank Partners</span>
             </motion.h1>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-200 mb-8 max-w-3xl mx-auto">
               We collaborate with India's leading banks to bring you the best loan products with competitive rates and excellent service.
             </p>
             <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
@@ -292,8 +292,8 @@ const BankPartners = () => {
                   viewport={{ once: true }}
                   className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                    <Icon className="text-blue-600 text-2xl" />
+                  <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                    <Icon className="text-emerald-600 text-2xl" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-3">{benefit.title}</h3>
                   <p className="text-gray-600">{benefit.description}</p>
@@ -315,7 +315,7 @@ const BankPartners = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100"
               >
                 {/* Bank Header */}
                 <div className={`h-2 bg-gradient-to-r ${bank.color}`}></div>
@@ -345,9 +345,9 @@ const BankPartners = () => {
 
                   {/* Key Details */}
                   <div className="grid grid-cols-2 gap-4 mb-4">
-                    <div className="bg-blue-50 p-3 rounded-lg">
+                    <div className="bg-emerald-50 p-3 rounded-xl">
                       <div className="text-sm text-gray-600">Interest Rate</div>
-                      <div className="text-lg font-bold text-blue-700">{bank.interestRate}</div>
+                      <div className="text-lg font-bold text-emerald-700">{bank.interestRate}</div>
                     </div>
                     <div className="bg-green-50 p-3 rounded-lg">
                       <div className="text-sm text-gray-600">Max Amount</div>
@@ -357,7 +357,7 @@ const BankPartners = () => {
 
                   {/* Processing Time */}
                   <div className="flex items-center bg-gray-50 p-3 rounded-lg mb-4">
-                    <FaClock className="text-blue-600 mr-2" />
+                    <FaClock className="text-emerald-600 mr-2" />
                     <span className="text-sm text-gray-700">Processing: <strong>{bank.processingTime}</strong></span>
                   </div>
 
@@ -401,7 +401,7 @@ const BankPartners = () => {
       </section>
 
       {/* Loan Categories */}
-      <section className="py-12 bg-gradient-to-r from-blue-50 to-gray-50">
+      <section className="py-12 bg-gradient-to-r from-slate-50 to-emerald-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Loan Categories We Cover</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -441,7 +441,7 @@ const BankPartners = () => {
               ].map((step, index) => (
                 <div key={index} className="relative">
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 text-white flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white flex items-center justify-center font-bold text-xl mx-auto mb-4">
                       {step.step}
                     </div>
                     <h3 className="font-bold text-gray-800 mb-2">{step.title}</h3>
@@ -458,27 +458,27 @@ const BankPartners = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-12 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Apply with Our Partner Banks?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-200 mb-8 max-w-2xl mx-auto">
             Get access to multiple banks through a single application. Compare rates and choose the best offer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/apply"
-              className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105"
+              className="bg-white text-emerald-700 hover:bg-slate-50 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105"
             >
               Apply for Loan
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-slate-800 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300"
             >
               Need Help Choosing?
             </Link>
           </div>
-          <p className="mt-8 text-blue-200 text-sm">
+          <p className="mt-8 text-slate-200 text-sm">
             One Application → Multiple Banks → Best Offer Guaranteed
           </p>
         </div>

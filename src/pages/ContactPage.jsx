@@ -67,10 +67,10 @@ const ContactAdvancedWithMapBottom = () => {
       ],
       action: "View on Map",
       link: "#map",
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
-      iconColor: "text-blue-600"
+      color: "from-emerald-500 to-emerald-600",
+      bgColor: "bg-emerald-50",
+      borderColor: "border-emerald-200",
+      iconColor: "text-emerald-600"
     },
     {
       icon: (
@@ -171,7 +171,7 @@ const ContactAdvancedWithMapBottom = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* HERO SECTION WITH ENHANCED BACKGROUND */}
-      <section className="relative py-12 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 overflow-hidden">
+      <section className="relative py-12 bg-gradient-to-br from-slate-800 via-emerald-900 to-teal-900 overflow-hidden">
         {/* Hero Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/25 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-pulse-slow"></div>
@@ -198,12 +198,12 @@ const ContactAdvancedWithMapBottom = () => {
               className="inline-block bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-xl mb-6"
             >
               <h1 className="text-2xl md:text-4xl font-bold mb-3">
-                DK MICRO FINANCE – <span className="text-orange-300">CONTACT US</span>
+                DK MICRO FINANCE – <span className="text-amber-300">CONTACT US</span>
               </h1>
-              <p className="text-base md:text-lg text-blue-100 mb-2 leading-relaxed font-semibold">
+              <p className="text-base md:text-lg text-slate-200 mb-2 leading-relaxed font-semibold">
                 We Understand Your World
               </p>
-              <p className="text-base md:text-lg text-blue-50 mb-4 leading-relaxed">
+              <p className="text-base md:text-lg text-slate-200 mb-4 leading-relaxed">
                 Have questions about our loan products? Need assistance with your application? We're here to help!
                 Get expert guidance on home loans, education loans, business loans, and more.
                 Contact us today for personalized financial solutions.
@@ -215,7 +215,7 @@ const ContactAdvancedWithMapBottom = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="tel:+914029331883" 
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-orange-500/25 text-sm flex items-center justify-center gap-2"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg text-sm flex items-center justify-center gap-2"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -239,7 +239,7 @@ const ContactAdvancedWithMapBottom = () => {
       </section>
 
       {/* FORM SECTION - BOTH CARDS SAME SIZE */}
-      <section ref={sectionRef} className="py-12 bg-gray-50">
+      <section ref={sectionRef} className="py-12 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div 
             initial="hidden" 
@@ -290,7 +290,7 @@ const ContactAdvancedWithMapBottom = () => {
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-slate-600">Monday - Saturday</span>
-                        <span className="text-blue-600 font-medium">9:00 AM - 6:00 PM</span>
+                        <span className="text-emerald-600 font-medium">9:00 AM - 6:00 PM</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-600">Sunday</span>
@@ -298,7 +298,7 @@ const ContactAdvancedWithMapBottom = () => {
                       </div>
                     </div>
                     <div className="mt-4 pt-4 border-t border-gray-200">
-                      <p className="text-blue-600 text-xs font-semibold">
+                      <p className="text-emerald-600 text-xs font-semibold">
                         24/7 Online Application Available
                       </p>
                     </div>
@@ -393,7 +393,7 @@ const ContactAdvancedWithMapBottom = () => {
                             onChange={handleChange}
                             className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${
                               errors.loanType ? "border-rose-400" : "border-slate-300"
-                            } rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 text-sm md:text-base`}
+                            } rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 text-sm md:text-base`}
                             aria-invalid={!!errors.loanType}
                           >
                             {loanTypes.map((type, index) => (
@@ -429,7 +429,7 @@ const ContactAdvancedWithMapBottom = () => {
                           value={formData.message} 
                           onChange={handleChange} 
                           placeholder="Tell us about your loan requirements, purpose, employment details, and any specific needs..." 
-                          className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${errors.message ? "border-rose-400" : "border-slate-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 resize-none text-sm md:text-base`} 
+                          className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${errors.message ? "border-rose-400" : "border-slate-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 resize-none text-sm md:text-base`} 
                           aria-invalid={!!errors.message} 
                         />
                         <div className="flex justify-between items-center mt-2">
@@ -451,7 +451,7 @@ const ContactAdvancedWithMapBottom = () => {
                       <button 
                         type="submit" 
                         disabled={isSubmitting} 
-                        className={`w-full py-3 md:py-4 rounded-lg font-bold text-white transition-all duration-300 text-sm md:text-base ${isSubmitting ? "bg-slate-400 cursor-not-allowed" : "bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 shadow-lg hover:shadow-xl"}`} 
+                        className={`w-full py-3 md:py-4 rounded-xl font-bold text-white transition-all duration-300 text-sm md:text-base ${isSubmitting ? "bg-slate-400 cursor-not-allowed" : "bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-lg hover:shadow-xl"}`} 
                         aria-busy={isSubmitting}
                       >
                         {isSubmitting ? (
@@ -509,14 +509,14 @@ const ContactAdvancedWithMapBottom = () => {
                   </div>
                 )}
               </div>
-              <div className="p-4 bg-blue-50 border-t border-gray-200">
+              <div className="p-4 bg-emerald-50 border-t border-slate-200">
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-emerald-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
                   <div>
-                    <p className="text-sm font-medium text-blue-700">2nd Floor, Bloossom Heights</p>
-                    <p className="text-xs text-blue-600">Patrika Nagar, Hitech City, Madhapur, Hyderabad - 500081</p>
+                    <p className="text-sm font-medium text-emerald-700">2nd Floor, Bloossom Heights</p>
+                    <p className="text-xs text-emerald-600">Patrika Nagar, Hitech City, Madhapur, Hyderabad - 500081</p>
                   </div>
                 </div>
               </div>
@@ -550,7 +550,7 @@ const ContactAdvancedWithMapBottom = () => {
               </p>
               <button 
                 onClick={() => setShowModal(false)} 
-                className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-colors"
               >
                 Close
               </button>
@@ -611,7 +611,7 @@ function FormField({ id, label, name, type = "text", value, onChange, placeholde
         onChange={onChange} 
         placeholder={placeholder} 
         required={required}
-        className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${error ? "border-rose-400" : "border-slate-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 text-sm md:text-base`} 
+        className={`w-full px-3 md:px-4 py-2 md:py-3 bg-slate-50 border ${error ? "border-rose-400" : "border-slate-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 text-sm md:text-base`} 
         aria-invalid={!!error} 
         aria-describedby={error ? `${id}-error` : undefined} 
       />
